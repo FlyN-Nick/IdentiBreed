@@ -10,15 +10,18 @@ class ViewController: UIViewController
   // MARK: - IBOutlets
   @IBOutlet weak var petImage: UIImageView!
   @IBOutlet weak var resultsText: UILabel!
+  @IBOutlet weak var similarPetsView: UITableView!
   let comparable = false
   var userBreeds: Array<String>?
   var userProbabilities: Array<Int>?
+  var similarPetsSpecial = [(QueryDocumentSnapshot, Int)]()
   
-  // MARK: - View Life Cycle
+  // MARK: - View Did Load
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    print("YEET")
+    similarPetsView.delegate = self
+    similarPetsView.dataSource = self
     //petImage.translatesAutoresizingMaskIntoConstraints = false;
     /*let captureSession = AVCaptureSession()
     guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
@@ -31,10 +34,12 @@ class ViewController: UIViewController
   }
 }
 
-// MARK: - IBActions
 extension ViewController {
+  // MARK: - Compare Pet Button
   @IBAction func comparePet(_ sender: Any) {
+    print("comparePet called")
     guard userBreeds != nil else { return }
+    print("userBreeds is not nil!")
     let db = Firestore.firestore()
     db.collection("imageInfos")
     .getDocuments() { (querySnapshot, err) in
@@ -44,6 +49,7 @@ extension ViewController {
       }
       else
       {
+        print("successfull query")
         var indexer = 0
         var similarPets = [(QueryDocumentSnapshot, Int)]()
         for document in querySnapshot!.documents
@@ -76,9 +82,13 @@ extension ViewController {
           }
           indexer += 1
         }
+        print("similarPets: \(similarPets)")
+        self.similarPetsSpecial = similarPets
+        self.similarPetsView.reloadData()
       }
     }
   }
+  // MARK: - Pick Image Button
   @IBAction func pickImage(_ sender: Any) {
     let imagePickerController = UIImagePickerController()
     imagePickerController.delegate = self
@@ -101,6 +111,7 @@ extension ViewController {
     actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
     self.present(actionSheet, animated: true)
   }
+    // MARK: - Pick Image Text Button
     @IBAction func pickImageText(_ sender: Any) {
       let imagePickerController = UIImagePickerController()
       imagePickerController.delegate = self
@@ -125,8 +136,8 @@ extension ViewController {
     }
 }
 
-// MARK: - Methods
 extension ViewController {
+  // MARK: - Firebase Upload
   func uploadPetImage(_ image: UIImage, breeds: [String], probabilities: [Int])
   {
       let uid = UUID().uuidString
@@ -140,6 +151,7 @@ extension ViewController {
           {
               return
           }
+          print("image uploaded")
           imageRef.downloadURL { (url, error) in
             if error != nil
             {
@@ -155,14 +167,20 @@ extension ViewController {
               "Probabilities": probabilities,
               "Link": urlString
               ] as [String : Any]
+            print("url: \(urlString), data: \(data)")
             dataReference.setData(data, completion: {(err) in
               if err != nil {
                 return
               }
+              else
+              {
+                print("image data uploaded")
+                }
             })
         }
     }
   }
+  // MARK: - Classify Animal
   func classifyAnimal(image: UIImage, imageTwo: CIImage) {
     resultsText.text = "Analyzing your pet..."
     
@@ -194,6 +212,7 @@ extension ViewController {
       }
     }
   }
+  // MARK: - Classify Dog
   func classifyDogBreed(image: CIImage, uiimage: UIImage)
   {
     // Load the ML model through its generated class
@@ -215,11 +234,16 @@ extension ViewController {
         breed = breed.replacingOccurrences(of: "_", with: " ")
         let probability = Int(res.confidence*100)
         outputText += "\(breed.capitalized): \(probability)%\n"
-        breeds.append(breed.capitalized)
-        probabilities.append(probability)
+        if (probability > 0)
+        {
+            breeds.append(breed.capitalized)
+            probabilities.append(probability)
+        }
       }
       self!.userBreeds = breeds
       self!.userProbabilities = probabilities
+      print(breeds)
+      print(probabilities)
       self!.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
       DispatchQueue.main.async { [weak self] in
         self?.resultsText.text! = outputText
@@ -236,6 +260,7 @@ extension ViewController {
       }
     }
   }
+  // MARK: - Classify Cat
   func classifyCatType(image: CIImage, uiimage: UIImage)
   {
     // Load the ML model through its generated class
@@ -252,8 +277,11 @@ extension ViewController {
       var probabilities = Array<Int>()
       for res in results!{
         outputText += "\(res.identifier): \(Int(res.confidence * 100))%\n"
-        breeds.append(res.identifier as String)
-        probabilities.append(Int(res.confidence*100))
+        if (Int(res.confidence*100) > 0)
+        {
+            breeds.append(res.identifier as String)
+            probabilities.append(Int(res.confidence*100))
+        }
       }
       self!.userBreeds = breeds
       self!.userProbabilities = probabilities
@@ -275,7 +303,7 @@ extension ViewController {
   }
 }
 
-// MARK: - UIImagePickerControllerDelegate
+// MARK: - Image Picker
 extension ViewController: UIImagePickerControllerDelegate {
 
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -307,4 +335,25 @@ fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [U
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
     return input.rawValue
+}
+// MARK: - Table View Code
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell") as! PhotoCell
+        let data = similarPetsSpecial[indexPath.row].0 as! [String : Any]
+        let url = data["Link"] as! String
+        if let realData = try? Data(contentsOf: NSURL(string: url) {
+            if let image = UIImage(data: realData) {
+                DispatchQueue.main.async {
+                    cell.setPhoto(image)
+                }
+            }
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        similarPetsSpecial.count
+    }
+    
 }

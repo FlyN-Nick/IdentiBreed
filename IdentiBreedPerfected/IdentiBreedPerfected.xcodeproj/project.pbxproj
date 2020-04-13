@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01796BBE244509EA00950425 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01796BBD244509EA00950425 /* GoogleService-Info.plist */; };
+		01796BC024451A5000950425 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01796BBF24451A5000950425 /* PhotoCell.swift */; };
 		01925B162445037600124B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01925B152445037600124B06 /* AppDelegate.swift */; };
 		01925B182445037600124B06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01925B172445037600124B06 /* SceneDelegate.swift */; };
 		01925B1A2445037600124B06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01925B192445037600124B06 /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		01796BBD244509EA00950425 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01796BBF24451A5000950425 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		01925B122445037600124B06 /* IdentiBreedPerfected.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdentiBreedPerfected.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01925B152445037600124B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01925B172445037600124B06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				01925B672445040800124B06 /* DogClassifier.mlmodel */,
 				01925B662445040800124B06 /* DogsVsCats.mlmodel */,
 				01796BBD244509EA00950425 /* GoogleService-Info.plist */,
+				01796BBF24451A5000950425 /* PhotoCell.swift */,
 			);
 			path = IdentiBreedPerfected;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				01925B6A2445040800124B06 /* DogsVsCats.mlmodel in Sources */,
 				01925B6B2445040800124B06 /* DogClassifier.mlmodel in Sources */,
 				01925B6C2445040800124B06 /* CatClassifier.mlmodel in Sources */,
+				01796BC024451A5000950425 /* PhotoCell.swift in Sources */,
 				01925B162445037600124B06 /* AppDelegate.swift in Sources */,
 				01925B182445037600124B06 /* SceneDelegate.swift in Sources */,
 				01925B692445040800124B06 /* CatClassifierFixed.mlmodel in Sources */,
