@@ -9,24 +9,44 @@
 /* Begin PBXBuildFile section */
 		01CC85BD2443D10100D80F44 /* DogClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01CC85BC2443D10100D80F44 /* DogClassifier.mlmodel */; };
 		01CC85BF2443D10800D80F44 /* DogsVsCats.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01CC85BE2443D10800D80F44 /* DogsVsCats.mlmodel */; };
-		01CC85C12443D1A600D80F44 /* Pictures in Resources */ = {isa = PBXBuildFile; fileRef = 01CC85C02443D1A600D80F44 /* Pictures */; };
 		01CC85C52443D5C900D80F44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01CC85C42443D5C800D80F44 /* GoogleService-Info.plist */; };
-		869120E493A95B1CE1DFB5B8 /* libPods-ImageClassifier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F09F1216AE15FAC3374530 /* libPods-ImageClassifier.a */; };
+		01CC85DC2443E65200D80F44 /* IdentiBreedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CC85DB2443E64B00D80F44 /* IdentiBreedLogo.png */; };
+		01CC85DE2443E66200D80F44 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif in Resources */ = {isa = PBXBuildFile; fileRef = 01CC85D92443E64400D80F44 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */; };
+		01CC85DF2443E66800D80F44 /* CameraIconFixed.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CC85D62443E63E00D80F44 /* CameraIconFixed.png */; };
+		01CC85E02443E66B00D80F44 /* CameraIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01CC85C72443E62400D80F44 /* CameraIcon.jpg */; };
 		CD8A65A11EE7EC0700942922 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A65A01EE7EC0700942922 /* AppDelegate.swift */; };
 		CD8A65A31EE7EC0700942922 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A65A21EE7EC0700942922 /* ViewController.swift */; };
 		CD8A65A61EE7EC0700942922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8A65A41EE7EC0700942922 /* Main.storyboard */; };
 		CD8A65A81EE7EC0700942922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8A65A71EE7EC0700942922 /* Assets.xcassets */; };
 		CD8A65AB1EE7EC0700942922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8A65A91EE7EC0700942922 /* LaunchScreen.storyboard */; };
+		F954A84B11D40AE664786363 /* libPods-ImageClassifier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD593363A08119534E7E6659 /* libPods-ImageClassifier.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01CC85BC2443D10100D80F44 /* DogClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DogClassifier.mlmodel; sourceTree = "<group>"; };
 		01CC85BE2443D10800D80F44 /* DogsVsCats.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DogsVsCats.mlmodel; sourceTree = "<group>"; };
-		01CC85C02443D1A600D80F44 /* Pictures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pictures; sourceTree = "<group>"; };
 		01CC85C42443D5C800D80F44 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		01CC85C62443D93D00D80F44 /* CatClassifier.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = CatClassifier.playground; path = ImageClassifier/Resources/CatClassifier.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		07F09F1216AE15FAC3374530 /* libPods-ImageClassifier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ImageClassifier.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		216F4B9196909334606410E4 /* Pods-ImageClassifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassifier.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageClassifier/Pods-ImageClassifier.release.xcconfig"; sourceTree = "<group>"; };
+		01CC85C72443E62400D80F44 /* CameraIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CameraIcon.jpg; sourceTree = "<group>"; };
+		01CC85C92443E63200D80F44 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
+		01CC85CA2443E63200D80F44 /* 76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 76.png; sourceTree = "<group>"; };
+		01CC85CB2443E63200D80F44 /* 60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 60.png; sourceTree = "<group>"; };
+		01CC85CC2443E63200D80F44 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
+		01CC85CD2443E63200D80F44 /* 167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 167.png; sourceTree = "<group>"; };
+		01CC85CE2443E63200D80F44 /* 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 29.png; sourceTree = "<group>"; };
+		01CC85CF2443E63200D80F44 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120.png; sourceTree = "<group>"; };
+		01CC85D02443E63200D80F44 /* 20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20.png; sourceTree = "<group>"; };
+		01CC85D12443E63200D80F44 /* 180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 180.png; sourceTree = "<group>"; };
+		01CC85D22443E63200D80F44 /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80.png; sourceTree = "<group>"; };
+		01CC85D32443E63200D80F44 /* 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 40.png; sourceTree = "<group>"; };
+		01CC85D42443E63200D80F44 /* 87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 87.png; sourceTree = "<group>"; };
+		01CC85D52443E63200D80F44 /* 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 152.png; sourceTree = "<group>"; };
+		01CC85D62443E63E00D80F44 /* CameraIconFixed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CameraIconFixed.png; sourceTree = "<group>"; };
+		01CC85D72443E64200D80F44 /* CameraIconFixed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CameraIconFixed.png; path = Pictures/CameraIconFixed.png; sourceTree = "<group>"; };
+		01CC85D92443E64400D80F44 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif"; sourceTree = "<group>"; };
+		01CC85DB2443E64B00D80F44 /* IdentiBreedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IdentiBreedLogo.png; sourceTree = "<group>"; };
+		6E9B39122B345AE65F1EB829 /* Pods-ImageClassifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassifier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageClassifier/Pods-ImageClassifier.debug.xcconfig"; sourceTree = "<group>"; };
+		8754754592909CF29986AAEE /* Pods-ImageClassifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassifier.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageClassifier/Pods-ImageClassifier.release.xcconfig"; sourceTree = "<group>"; };
 		CD8A659D1EE7EC0700942922 /* IdentiBreed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdentiBreed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8A65A01EE7EC0700942922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD8A65A21EE7EC0700942922 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,7 +54,7 @@
 		CD8A65A71EE7EC0700942922 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD8A65AA1EE7EC0700942922 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD8A65AC1EE7EC0700942922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E347C0034D9252FFFA477F09 /* Pods-ImageClassifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassifier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageClassifier/Pods-ImageClassifier.debug.xcconfig"; sourceTree = "<group>"; };
+		FD593363A08119534E7E6659 /* libPods-ImageClassifier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ImageClassifier.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,26 +62,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				869120E493A95B1CE1DFB5B8 /* libPods-ImageClassifier.a in Frameworks */,
+				F954A84B11D40AE664786363 /* libPods-ImageClassifier.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		62ADFD957E0FDFBFCB0BCB27 /* Pods */ = {
+		01CC85C82443E63200D80F44 /* AppLogoResized */ = {
 			isa = PBXGroup;
 			children = (
-				E347C0034D9252FFFA477F09 /* Pods-ImageClassifier.debug.xcconfig */,
-				216F4B9196909334606410E4 /* Pods-ImageClassifier.release.xcconfig */,
+				01CC85C92443E63200D80F44 /* 1024.png */,
+				01CC85CA2443E63200D80F44 /* 76.png */,
+				01CC85CB2443E63200D80F44 /* 60.png */,
+				01CC85CC2443E63200D80F44 /* 58.png */,
+				01CC85CD2443E63200D80F44 /* 167.png */,
+				01CC85CE2443E63200D80F44 /* 29.png */,
+				01CC85CF2443E63200D80F44 /* 120.png */,
+				01CC85D02443E63200D80F44 /* 20.png */,
+				01CC85D12443E63200D80F44 /* 180.png */,
+				01CC85D22443E63200D80F44 /* 80.png */,
+				01CC85D32443E63200D80F44 /* 40.png */,
+				01CC85D42443E63200D80F44 /* 87.png */,
+				01CC85D52443E63200D80F44 /* 152.png */,
+			);
+			path = AppLogoResized;
+			sourceTree = "<group>";
+		};
+		580EFBCFBD3B77D2F7B36E69 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6E9B39122B345AE65F1EB829 /* Pods-ImageClassifier.debug.xcconfig */,
+				8754754592909CF29986AAEE /* Pods-ImageClassifier.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B6AD296552F287854E38DE41 /* Frameworks */ = {
+		B51EF169E26540E8D7353BA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				07F09F1216AE15FAC3374530 /* libPods-ImageClassifier.a */,
+				FD593363A08119534E7E6659 /* libPods-ImageClassifier.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -72,8 +112,8 @@
 				01CC85C62443D93D00D80F44 /* CatClassifier.playground */,
 				CD8A659F1EE7EC0700942922 /* ImageClassifier */,
 				CD8A659E1EE7EC0700942922 /* Products */,
-				62ADFD957E0FDFBFCB0BCB27 /* Pods */,
-				B6AD296552F287854E38DE41 /* Frameworks */,
+				580EFBCFBD3B77D2F7B36E69 /* Pods */,
+				B51EF169E26540E8D7353BA7 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -107,7 +147,12 @@
 				CD8A65A91EE7EC0700942922 /* LaunchScreen.storyboard */,
 				01CC85BC2443D10100D80F44 /* DogClassifier.mlmodel */,
 				01CC85BE2443D10800D80F44 /* DogsVsCats.mlmodel */,
-				01CC85C02443D1A600D80F44 /* Pictures */,
+				01CC85C72443E62400D80F44 /* CameraIcon.jpg */,
+				01CC85D62443E63E00D80F44 /* CameraIconFixed.png */,
+				01CC85D72443E64200D80F44 /* CameraIconFixed.png */,
+				01CC85D92443E64400D80F44 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */,
+				01CC85DB2443E64B00D80F44 /* IdentiBreedLogo.png */,
+				01CC85C82443E63200D80F44 /* AppLogoResized */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -119,11 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD8A65AF1EE7EC0700942922 /* Build configuration list for PBXNativeTarget "ImageClassifier" */;
 			buildPhases = (
-				37996978E7086D05A3397897 /* [CP] Check Pods Manifest.lock */,
+				C7B4E61916106FF42A68FEF2 /* [CP] Check Pods Manifest.lock */,
 				CD8A65991EE7EC0700942922 /* Sources */,
 				CD8A659A1EE7EC0700942922 /* Frameworks */,
 				CD8A659B1EE7EC0700942922 /* Resources */,
-				AF62CAC410E295230C8BB2CE /* [CP] Copy Pods Resources */,
+				019DC1E38B2D6DF5098EB429 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +191,7 @@
 				TargetAttributes = {
 					CD8A659C1EE7EC0700942922 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -173,36 +219,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CC85DF2443E66800D80F44 /* CameraIconFixed.png in Resources */,
+				01CC85DE2443E66200D80F44 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif in Resources */,
 				CD8A65AB1EE7EC0700942922 /* LaunchScreen.storyboard in Resources */,
+				01CC85E02443E66B00D80F44 /* CameraIcon.jpg in Resources */,
 				CD8A65A81EE7EC0700942922 /* Assets.xcassets in Resources */,
+				01CC85DC2443E65200D80F44 /* IdentiBreedLogo.png in Resources */,
 				01CC85C52443D5C900D80F44 /* GoogleService-Info.plist in Resources */,
 				CD8A65A61EE7EC0700942922 /* Main.storyboard in Resources */,
-				01CC85C12443D1A600D80F44 /* Pictures in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		37996978E7086D05A3397897 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ImageClassifier-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AF62CAC410E295230C8BB2CE /* [CP] Copy Pods Resources */ = {
+		019DC1E38B2D6DF5098EB429 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -218,6 +249,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImageClassifier/Pods-ImageClassifier-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7B4E61916106FF42A68FEF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ImageClassifier-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -371,7 +420,7 @@
 		};
 		CD8A65B01EE7EC0700942922 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E347C0034D9252FFFA477F09 /* Pods-ImageClassifier.debug.xcconfig */;
+			baseConfigurationReference = 6E9B39122B345AE65F1EB829 /* Pods-ImageClassifier.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -379,17 +428,21 @@
 				INFOPLIST_FILE = ImageClassifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.2;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreed;
 				PRODUCT_NAME = IdentiBreed;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		CD8A65B11EE7EC0700942922 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 216F4B9196909334606410E4 /* Pods-ImageClassifier.release.xcconfig */;
+			baseConfigurationReference = 8754754592909CF29986AAEE /* Pods-ImageClassifier.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -397,10 +450,14 @@
 				INFOPLIST_FILE = ImageClassifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.2;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreed;
 				PRODUCT_NAME = IdentiBreed;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
