@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FlB-SY-Ze1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="boq-b5-74R">
+            <objects>
+                <viewController id="FlB-SY-Ze1" customClass="MainViewController" customModule="IdentiBreed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TyA-sn-9HG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IdentiBreedLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zxe-cx-Z5l">
+                                <rect key="frame" x="49" y="62" width="317" height="169"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLz-Ew-Lpa">
+                                <rect key="frame" x="78" y="505" width="70" height="70"/>
+                                <state key="normal" backgroundImage="CameraIconFixed.png"/>
+                                <connections>
+                                    <action selector="pickImage:" destination="FlB-SY-Ze1" eventType="touchUpInside" id="02F-G0-6g8"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ixo-eX-ooH">
+                                <rect key="frame" x="0.0" y="594" width="414" height="302"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="302" id="Tbn-Qm-dVR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IdentiBreed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uI5-9Z-HxH">
+                                <rect key="frame" x="145" y="248" width="124" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="zSX-bb-B6m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your results will be shown here!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtM-7b-w1O">
+                                <rect key="frame" x="56" y="304" width="303" height="130"/>
+                                <color key="backgroundColor" red="0.19215686269999999" green="0.1843137255" blue="0.1843137255" alpha="0.71920483732876717" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.51764705879999995" green="0.86274509799999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIU-0T-QLC">
+                                <rect key="frame" x="260" y="514" width="70" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="LQT-x5-4YQ"/>
+                                    <constraint firstAttribute="height" constant="55.5" id="LoF-ui-m3i"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="arrowshape.turn.up.right" catalog="system"/>
+                                <connections>
+                                    <action selector="comparePet:" destination="FlB-SY-Ze1" eventType="touchUpInside" id="49k-Mx-hnk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.73725490196078436" green="0.80000000000000004" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="VIl-1h-TVk" firstAttribute="trailing" secondItem="BIU-0T-QLC" secondAttribute="trailing" constant="84" id="36P-sU-e4G"/>
+                            <constraint firstItem="Ixo-eX-ooH" firstAttribute="centerX" secondItem="uI5-9Z-HxH" secondAttribute="centerX" id="6Nq-pJ-0ph"/>
+                            <constraint firstItem="Ixo-eX-ooH" firstAttribute="centerX" secondItem="Zxe-cx-Z5l" secondAttribute="centerX" id="C6D-gt-gCL"/>
+                            <constraint firstItem="uI5-9Z-HxH" firstAttribute="top" secondItem="Zxe-cx-Z5l" secondAttribute="bottom" constant="17" id="DXD-Rl-mCY"/>
+                            <constraint firstItem="Ixo-eX-ooH" firstAttribute="centerX" secondItem="qtM-7b-w1O" secondAttribute="centerX" id="HHT-Ed-o7L"/>
+                            <constraint firstItem="qtM-7b-w1O" firstAttribute="top" secondItem="uI5-9Z-HxH" secondAttribute="bottom" constant="26" id="T8g-kT-h6p"/>
+                            <constraint firstItem="uI5-9Z-HxH" firstAttribute="top" secondItem="TyA-sn-9HG" secondAttribute="top" constant="248" id="VD5-MB-z6D"/>
+                            <constraint firstItem="Ixo-eX-ooH" firstAttribute="leading" secondItem="VIl-1h-TVk" secondAttribute="leading" id="cS8-v3-sbV"/>
+                            <constraint firstItem="BIU-0T-QLC" firstAttribute="top" secondItem="qtM-7b-w1O" secondAttribute="bottom" constant="79" id="cuz-rq-30Y"/>
+                            <constraint firstItem="Ixo-eX-ooH" firstAttribute="centerX" secondItem="TyA-sn-9HG" secondAttribute="centerX" id="eLf-r2-ejl"/>
+                            <constraint firstItem="Ixo-eX-ooH" firstAttribute="top" secondItem="BIU-0T-QLC" secondAttribute="bottom" constant="25.5" id="fop-gf-ffx"/>
+                            <constraint firstItem="BIU-0T-QLC" firstAttribute="centerY" secondItem="jLz-Ew-Lpa" secondAttribute="centerY" id="iQu-mj-d39"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Ixo-eX-ooH" secondAttribute="bottom" constant="-34" id="jv0-er-jqn"/>
+                            <constraint firstItem="Ixo-eX-ooH" firstAttribute="top" secondItem="jLz-Ew-Lpa" secondAttribute="bottom" constant="19" id="yta-eK-xS8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VIl-1h-TVk"/>
+                    </view>
+                    <connections>
+                        <outlet property="petImage" destination="Ixo-eX-ooH" id="Sjj-tw-T6u"/>
+                        <outlet property="resultsText" destination="qtM-7b-w1O" id="Gt0-tV-dfE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cab-ZM-VN2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-181.15942028985509" y="15.401785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CameraIconFixed.png" width="880" height="920"/>
+        <image name="IdentiBreedLogo.png" width="1600" height="1600"/>
+        <image name="arrowshape.turn.up.right" catalog="system" width="64" height="52"/>
+    </resources>
+</document>

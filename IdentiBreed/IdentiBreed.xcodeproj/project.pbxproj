@@ -1,0 +1,756 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01EF9EC32444E8430090D80B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EF9EC22444E8430090D80B /* MainViewController.swift */; };
+		01EF9EC52444E8FB0090D80B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EC42444E8FB0090D80B /* Main.storyboard */; };
+		01EF9EC62444EBAB0090D80B /* CatClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01EF9EBA2444E6A20090D80B /* CatClassifier.mlmodel */; };
+		01EF9EC72444EBAE0090D80B /* DogClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01EF9EBF2444E6B90090D80B /* DogClassifier.mlmodel */; };
+		01EF9EC82444EBB00090D80B /* DogsVsCats.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01EF9EC12444E6CB0090D80B /* DogsVsCats.mlmodel */; };
+		01EF9EC92444EBB30090D80B /* CatClassifierFixed.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01EF9EBD2444E6B50090D80B /* CatClassifierFixed.mlmodel */; };
+		01EF9ECA2444EBB60090D80B /* CameraIconFixed.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EB92444E69F0090D80B /* CameraIconFixed.png */; };
+		01EF9ECC2444EBBD0090D80B /* 76.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EAB2444E6960090D80B /* 76.png */; };
+		01EF9ECD2444EBC00090D80B /* 60.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EAC2444E6960090D80B /* 60.png */; };
+		01EF9ECE2444EBC20090D80B /* 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EAF2444E6960090D80B /* 29.png */; };
+		01EF9ECF2444EBC70090D80B /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EAD2444E6960090D80B /* 58.png */; };
+		01EF9ED02444EBC90090D80B /* 167.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EAE2444E6960090D80B /* 167.png */; };
+		01EF9ED12444EBCC0090D80B /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EBC2444E6B30090D80B /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */; };
+		01EF9ED22444EBCF0090D80B /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EB02444E6960090D80B /* 120.png */; };
+		01EF9ED32444EBD10090D80B /* 20.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EB12444E6960090D80B /* 20.png */; };
+		01EF9ED42444EBD40090D80B /* 180.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EB22444E6960090D80B /* 180.png */; };
+		01EF9ED52444EBD80090D80B /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EB32444E6960090D80B /* 80.png */; };
+		01EF9ED62444EBDE0090D80B /* IdentiBreedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EBE2444E6B70090D80B /* IdentiBreedLogo.png */; };
+		01EF9ED72444EBE50090D80B /* 40.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EB42444E6960090D80B /* 40.png */; };
+		01EF9ED82444EBE90090D80B /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EAA2444E6960090D80B /* 1024.png */; };
+		01EF9ED92444EBEC0090D80B /* 87.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EB52444E6960090D80B /* 87.png */; };
+		01EF9EDA2444EBEE0090D80B /* 152.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EB62444E6960090D80B /* 152.png */; };
+		01EF9EDB2444ED500090D80B /* CameraIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01EF9EBB2444E6AE0090D80B /* CameraIcon.jpg */; };
+		01F3186D2444E45000EC9F82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F3186C2444E45000EC9F82 /* AppDelegate.swift */; };
+		01F3186F2444E45000EC9F82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F3186E2444E45000EC9F82 /* SceneDelegate.swift */; };
+		01F318732444E45000EC9F82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01F318722444E45000EC9F82 /* Assets.xcassets */; };
+		01F318842444E45100EC9F82 /* IdentiBreedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F318832444E45100EC9F82 /* IdentiBreedTests.swift */; };
+		01F3188F2444E45100EC9F82 /* IdentiBreedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F3188E2444E45100EC9F82 /* IdentiBreedUITests.swift */; };
+		01F3189F2444E51800EC9F82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01F3189E2444E51800EC9F82 /* GoogleService-Info.plist */; };
+		B5CC1016B03D1FC12BB15DE2 /* libPods-IdentiBreed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FD53E88E747CF1F74718B2 /* libPods-IdentiBreed.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		01F318802444E45100EC9F82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01F318612444E45000EC9F82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01F318682444E45000EC9F82;
+			remoteInfo = IdentiBreed;
+		};
+		01F3188B2444E45100EC9F82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01F318612444E45000EC9F82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01F318682444E45000EC9F82;
+			remoteInfo = IdentiBreed;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01EF9EAA2444E6960090D80B /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
+		01EF9EAB2444E6960090D80B /* 76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 76.png; sourceTree = "<group>"; };
+		01EF9EAC2444E6960090D80B /* 60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 60.png; sourceTree = "<group>"; };
+		01EF9EAD2444E6960090D80B /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
+		01EF9EAE2444E6960090D80B /* 167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 167.png; sourceTree = "<group>"; };
+		01EF9EAF2444E6960090D80B /* 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 29.png; sourceTree = "<group>"; };
+		01EF9EB02444E6960090D80B /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120.png; sourceTree = "<group>"; };
+		01EF9EB12444E6960090D80B /* 20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20.png; sourceTree = "<group>"; };
+		01EF9EB22444E6960090D80B /* 180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 180.png; sourceTree = "<group>"; };
+		01EF9EB32444E6960090D80B /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80.png; sourceTree = "<group>"; };
+		01EF9EB42444E6960090D80B /* 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 40.png; sourceTree = "<group>"; };
+		01EF9EB52444E6960090D80B /* 87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 87.png; sourceTree = "<group>"; };
+		01EF9EB62444E6960090D80B /* 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 152.png; sourceTree = "<group>"; };
+		01EF9EB92444E69F0090D80B /* CameraIconFixed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CameraIconFixed.png; sourceTree = "<group>"; };
+		01EF9EBA2444E6A20090D80B /* CatClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CatClassifier.mlmodel; sourceTree = "<group>"; };
+		01EF9EBB2444E6AE0090D80B /* CameraIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CameraIcon.jpg; sourceTree = "<group>"; };
+		01EF9EBC2444E6B30090D80B /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif"; sourceTree = "<group>"; };
+		01EF9EBD2444E6B50090D80B /* CatClassifierFixed.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CatClassifierFixed.mlmodel; sourceTree = "<group>"; };
+		01EF9EBE2444E6B70090D80B /* IdentiBreedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IdentiBreedLogo.png; sourceTree = "<group>"; };
+		01EF9EBF2444E6B90090D80B /* DogClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DogClassifier.mlmodel; sourceTree = "<group>"; };
+		01EF9EC02444E6BD0090D80B /* CatClassifier.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CatClassifier.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		01EF9EC12444E6CB0090D80B /* DogsVsCats.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DogsVsCats.mlmodel; sourceTree = "<group>"; };
+		01EF9EC22444E8430090D80B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		01EF9EC42444E8FB0090D80B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		01F318692444E45000EC9F82 /* IdentiBreed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdentiBreed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01F3186C2444E45000EC9F82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		01F3186E2444E45000EC9F82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		01F318722444E45000EC9F82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		01F318752444E45000EC9F82 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		01F3187A2444E45000EC9F82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01F3187F2444E45100EC9F82 /* IdentiBreedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IdentiBreedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01F318832444E45100EC9F82 /* IdentiBreedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentiBreedTests.swift; sourceTree = "<group>"; };
+		01F318852444E45100EC9F82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01F3188A2444E45100EC9F82 /* IdentiBreedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IdentiBreedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01F3188E2444E45100EC9F82 /* IdentiBreedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentiBreedUITests.swift; sourceTree = "<group>"; };
+		01F318902444E45100EC9F82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01F3189E2444E51800EC9F82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43B76326546BBE540D4B33D4 /* Pods-IdentiBreed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdentiBreed.debug.xcconfig"; path = "Target Support Files/Pods-IdentiBreed/Pods-IdentiBreed.debug.xcconfig"; sourceTree = "<group>"; };
+		B6FD53E88E747CF1F74718B2 /* libPods-IdentiBreed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IdentiBreed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C25D666BE4B938B02752671D /* Pods-IdentiBreed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdentiBreed.release.xcconfig"; path = "Target Support Files/Pods-IdentiBreed/Pods-IdentiBreed.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01F318662444E45000EC9F82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5CC1016B03D1FC12BB15DE2 /* libPods-IdentiBreed.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01F3187C2444E45100EC9F82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01F318872444E45100EC9F82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01EF9EA92444E6960090D80B /* AppLogoResized */ = {
+			isa = PBXGroup;
+			children = (
+				01EF9EB92444E69F0090D80B /* CameraIconFixed.png */,
+				01EF9EBB2444E6AE0090D80B /* CameraIcon.jpg */,
+				01EF9EAB2444E6960090D80B /* 76.png */,
+				01EF9EAC2444E6960090D80B /* 60.png */,
+				01EF9EAD2444E6960090D80B /* 58.png */,
+				01EF9EAE2444E6960090D80B /* 167.png */,
+				01EF9EAF2444E6960090D80B /* 29.png */,
+				01EF9EBC2444E6B30090D80B /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */,
+				01EF9EB02444E6960090D80B /* 120.png */,
+				01EF9EB12444E6960090D80B /* 20.png */,
+				01EF9EB22444E6960090D80B /* 180.png */,
+				01EF9EB32444E6960090D80B /* 80.png */,
+				01EF9EB42444E6960090D80B /* 40.png */,
+				01EF9EBE2444E6B70090D80B /* IdentiBreedLogo.png */,
+				01EF9EAA2444E6960090D80B /* 1024.png */,
+				01EF9EB52444E6960090D80B /* 87.png */,
+				01EF9EB62444E6960090D80B /* 152.png */,
+			);
+			path = AppLogoResized;
+			sourceTree = "<group>";
+		};
+		01F318602444E45000EC9F82 = {
+			isa = PBXGroup;
+			children = (
+				01F3186B2444E45000EC9F82 /* IdentiBreed */,
+				01F3186A2444E45000EC9F82 /* Products */,
+				01F318822444E45100EC9F82 /* IdentiBreedTests */,
+				01F3188D2444E45100EC9F82 /* IdentiBreedUITests */,
+				01EF9EA92444E6960090D80B /* AppLogoResized */,
+				9E965A5F8FD865212B548847 /* Pods */,
+				269B3E38B7E27E2FDC9D285F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		01F3186A2444E45000EC9F82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01F318692444E45000EC9F82 /* IdentiBreed.app */,
+				01F3187F2444E45100EC9F82 /* IdentiBreedTests.xctest */,
+				01F3188A2444E45100EC9F82 /* IdentiBreedUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01F3186B2444E45000EC9F82 /* IdentiBreed */ = {
+			isa = PBXGroup;
+			children = (
+				01F3186C2444E45000EC9F82 /* AppDelegate.swift */,
+				01F3186E2444E45000EC9F82 /* SceneDelegate.swift */,
+				01F318722444E45000EC9F82 /* Assets.xcassets */,
+				01F3187A2444E45000EC9F82 /* Info.plist */,
+				01F3189E2444E51800EC9F82 /* GoogleService-Info.plist */,
+				01EF9EC22444E8430090D80B /* MainViewController.swift */,
+				01EF9EBF2444E6B90090D80B /* DogClassifier.mlmodel */,
+				01EF9EBD2444E6B50090D80B /* CatClassifierFixed.mlmodel */,
+				01EF9EC12444E6CB0090D80B /* DogsVsCats.mlmodel */,
+				01EF9EC02444E6BD0090D80B /* CatClassifier.playground */,
+				01EF9EC42444E8FB0090D80B /* Main.storyboard */,
+				01EF9EBA2444E6A20090D80B /* CatClassifier.mlmodel */,
+				01F318742444E45000EC9F82 /* Preview Content */,
+			);
+			path = IdentiBreed;
+			sourceTree = "<group>";
+		};
+		01F318742444E45000EC9F82 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				01F318752444E45000EC9F82 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		01F318822444E45100EC9F82 /* IdentiBreedTests */ = {
+			isa = PBXGroup;
+			children = (
+				01F318832444E45100EC9F82 /* IdentiBreedTests.swift */,
+				01F318852444E45100EC9F82 /* Info.plist */,
+			);
+			path = IdentiBreedTests;
+			sourceTree = "<group>";
+		};
+		01F3188D2444E45100EC9F82 /* IdentiBreedUITests */ = {
+			isa = PBXGroup;
+			children = (
+				01F3188E2444E45100EC9F82 /* IdentiBreedUITests.swift */,
+				01F318902444E45100EC9F82 /* Info.plist */,
+			);
+			path = IdentiBreedUITests;
+			sourceTree = "<group>";
+		};
+		269B3E38B7E27E2FDC9D285F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6FD53E88E747CF1F74718B2 /* libPods-IdentiBreed.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E965A5F8FD865212B548847 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43B76326546BBE540D4B33D4 /* Pods-IdentiBreed.debug.xcconfig */,
+				C25D666BE4B938B02752671D /* Pods-IdentiBreed.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01F318682444E45000EC9F82 /* IdentiBreed */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01F318932444E45100EC9F82 /* Build configuration list for PBXNativeTarget "IdentiBreed" */;
+			buildPhases = (
+				AB084CDB8FC3D856E720617C /* [CP] Check Pods Manifest.lock */,
+				01F318652444E45000EC9F82 /* Sources */,
+				01F318662444E45000EC9F82 /* Frameworks */,
+				01F318672444E45000EC9F82 /* Resources */,
+				71160A8FB0DC88B845468FA6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IdentiBreed;
+			productName = IdentiBreed;
+			productReference = 01F318692444E45000EC9F82 /* IdentiBreed.app */;
+			productType = "com.apple.product-type.application";
+		};
+		01F3187E2444E45100EC9F82 /* IdentiBreedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01F318962444E45100EC9F82 /* Build configuration list for PBXNativeTarget "IdentiBreedTests" */;
+			buildPhases = (
+				01F3187B2444E45100EC9F82 /* Sources */,
+				01F3187C2444E45100EC9F82 /* Frameworks */,
+				01F3187D2444E45100EC9F82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01F318812444E45100EC9F82 /* PBXTargetDependency */,
+			);
+			name = IdentiBreedTests;
+			productName = IdentiBreedTests;
+			productReference = 01F3187F2444E45100EC9F82 /* IdentiBreedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		01F318892444E45100EC9F82 /* IdentiBreedUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01F318992444E45100EC9F82 /* Build configuration list for PBXNativeTarget "IdentiBreedUITests" */;
+			buildPhases = (
+				01F318862444E45100EC9F82 /* Sources */,
+				01F318872444E45100EC9F82 /* Frameworks */,
+				01F318882444E45100EC9F82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01F3188C2444E45100EC9F82 /* PBXTargetDependency */,
+			);
+			name = IdentiBreedUITests;
+			productName = IdentiBreedUITests;
+			productReference = 01F3188A2444E45100EC9F82 /* IdentiBreedUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01F318612444E45000EC9F82 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Liege LLC.";
+				TargetAttributes = {
+					01F318682444E45000EC9F82 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					01F3187E2444E45100EC9F82 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 01F318682444E45000EC9F82;
+					};
+					01F318892444E45100EC9F82 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 01F318682444E45000EC9F82;
+					};
+				};
+			};
+			buildConfigurationList = 01F318642444E45000EC9F82 /* Build configuration list for PBXProject "IdentiBreed" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 01F318602444E45000EC9F82;
+			productRefGroup = 01F3186A2444E45000EC9F82 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01F318682444E45000EC9F82 /* IdentiBreed */,
+				01F3187E2444E45100EC9F82 /* IdentiBreedTests */,
+				01F318892444E45100EC9F82 /* IdentiBreedUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01F318672444E45000EC9F82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01F3189F2444E51800EC9F82 /* GoogleService-Info.plist in Resources */,
+				01EF9ED02444EBC90090D80B /* 167.png in Resources */,
+				01EF9EDB2444ED500090D80B /* CameraIcon.jpg in Resources */,
+				01EF9EDA2444EBEE0090D80B /* 152.png in Resources */,
+				01EF9ED82444EBE90090D80B /* 1024.png in Resources */,
+				01EF9EC52444E8FB0090D80B /* Main.storyboard in Resources */,
+				01EF9ED72444EBE50090D80B /* 40.png in Resources */,
+				01EF9ED92444EBEC0090D80B /* 87.png in Resources */,
+				01EF9ECD2444EBC00090D80B /* 60.png in Resources */,
+				01EF9ED12444EBCC0090D80B /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif in Resources */,
+				01EF9ECC2444EBBD0090D80B /* 76.png in Resources */,
+				01F318732444E45000EC9F82 /* Assets.xcassets in Resources */,
+				01EF9ECE2444EBC20090D80B /* 29.png in Resources */,
+				01EF9ED32444EBD10090D80B /* 20.png in Resources */,
+				01EF9ED62444EBDE0090D80B /* IdentiBreedLogo.png in Resources */,
+				01EF9ED42444EBD40090D80B /* 180.png in Resources */,
+				01EF9ECA2444EBB60090D80B /* CameraIconFixed.png in Resources */,
+				01EF9ED22444EBCF0090D80B /* 120.png in Resources */,
+				01EF9ED52444EBD80090D80B /* 80.png in Resources */,
+				01EF9ECF2444EBC70090D80B /* 58.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01F3187D2444E45100EC9F82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01F318882444E45100EC9F82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		71160A8FB0DC88B845468FA6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IdentiBreed/Pods-IdentiBreed-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IdentiBreed/Pods-IdentiBreed-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IdentiBreed/Pods-IdentiBreed-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB084CDB8FC3D856E720617C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IdentiBreed-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01F318652444E45000EC9F82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01F3186D2444E45000EC9F82 /* AppDelegate.swift in Sources */,
+				01F3186F2444E45000EC9F82 /* SceneDelegate.swift in Sources */,
+				01EF9EC72444EBAE0090D80B /* DogClassifier.mlmodel in Sources */,
+				01EF9EC82444EBB00090D80B /* DogsVsCats.mlmodel in Sources */,
+				01EF9EC32444E8430090D80B /* MainViewController.swift in Sources */,
+				01EF9EC62444EBAB0090D80B /* CatClassifier.mlmodel in Sources */,
+				01EF9EC92444EBB30090D80B /* CatClassifierFixed.mlmodel in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01F3187B2444E45100EC9F82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01F318842444E45100EC9F82 /* IdentiBreedTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01F318862444E45100EC9F82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01F3188F2444E45100EC9F82 /* IdentiBreedUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01F318812444E45100EC9F82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01F318682444E45000EC9F82 /* IdentiBreed */;
+			targetProxy = 01F318802444E45100EC9F82 /* PBXContainerItemProxy */;
+		};
+		01F3188C2444E45100EC9F82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01F318682444E45000EC9F82 /* IdentiBreed */;
+			targetProxy = 01F3188B2444E45100EC9F82 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		01F318912444E45100EC9F82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		01F318922444E45100EC9F82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		01F318942444E45100EC9F82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43B76326546BBE540D4B33D4 /* Pods-IdentiBreed.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"IdentiBreed/Preview Content\"";
+				DEVELOPMENT_TEAM = 3GKF7STU5Y;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = IdentiBreed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		01F318952444E45100EC9F82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C25D666BE4B938B02752671D /* Pods-IdentiBreed.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"IdentiBreed/Preview Content\"";
+				DEVELOPMENT_TEAM = 3GKF7STU5Y;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = IdentiBreed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		01F318972444E45100EC9F82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GKF7STU5Y;
+				INFOPLIST_FILE = IdentiBreedTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IdentiBreed.app/IdentiBreed";
+			};
+			name = Debug;
+		};
+		01F318982444E45100EC9F82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GKF7STU5Y;
+				INFOPLIST_FILE = IdentiBreedTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IdentiBreed.app/IdentiBreed";
+			};
+			name = Release;
+		};
+		01F3189A2444E45100EC9F82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GKF7STU5Y;
+				INFOPLIST_FILE = IdentiBreedUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreedUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IdentiBreed;
+			};
+			name = Debug;
+		};
+		01F3189B2444E45100EC9F82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GKF7STU5Y;
+				INFOPLIST_FILE = IdentiBreedUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreedUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IdentiBreed;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01F318642444E45000EC9F82 /* Build configuration list for PBXProject "IdentiBreed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01F318912444E45100EC9F82 /* Debug */,
+				01F318922444E45100EC9F82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01F318932444E45100EC9F82 /* Build configuration list for PBXNativeTarget "IdentiBreed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01F318942444E45100EC9F82 /* Debug */,
+				01F318952444E45100EC9F82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01F318962444E45100EC9F82 /* Build configuration list for PBXNativeTarget "IdentiBreedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01F318972444E45100EC9F82 /* Debug */,
+				01F318982444E45100EC9F82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01F318992444E45100EC9F82 /* Build configuration list for PBXNativeTarget "IdentiBreedUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01F3189A2444E45100EC9F82 /* Debug */,
+				01F3189B2444E45100EC9F82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01F318612444E45000EC9F82 /* Project object */;
+}
