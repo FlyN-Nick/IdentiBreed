@@ -1,0 +1,749 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01796BBE244509EA00950425 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01796BBD244509EA00950425 /* GoogleService-Info.plist */; };
+		01925B162445037600124B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01925B152445037600124B06 /* AppDelegate.swift */; };
+		01925B182445037600124B06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01925B172445037600124B06 /* SceneDelegate.swift */; };
+		01925B1A2445037600124B06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01925B192445037600124B06 /* ViewController.swift */; };
+		01925B1D2445037600124B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01925B1B2445037600124B06 /* Main.storyboard */; };
+		01925B1F2445037700124B06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01925B1E2445037700124B06 /* Assets.xcassets */; };
+		01925B222445037700124B06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01925B202445037700124B06 /* LaunchScreen.storyboard */; };
+		01925B2D2445037700124B06 /* IdentiBreedPerfectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01925B2C2445037700124B06 /* IdentiBreedPerfectedTests.swift */; };
+		01925B382445037700124B06 /* IdentiBreedPerfectedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01925B372445037700124B06 /* IdentiBreedPerfectedUITests.swift */; };
+		01925B512445039E00124B06 /* 20.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B452445039D00124B06 /* 20.png */; };
+		01925B522445039E00124B06 /* 87.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B462445039D00124B06 /* 87.png */; };
+		01925B532445039E00124B06 /* 167.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B472445039D00124B06 /* 167.png */; };
+		01925B542445039E00124B06 /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B482445039D00124B06 /* 80.png */; };
+		01925B552445039E00124B06 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif in Resources */ = {isa = PBXBuildFile; fileRef = 01925B492445039D00124B06 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */; };
+		01925B562445039E00124B06 /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B4A2445039E00124B06 /* 58.png */; };
+		01925B572445039E00124B06 /* 60.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B4B2445039E00124B06 /* 60.png */; };
+		01925B582445039E00124B06 /* 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B4C2445039E00124B06 /* 29.png */; };
+		01925B592445039E00124B06 /* 152.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B4D2445039E00124B06 /* 152.png */; };
+		01925B5A2445039E00124B06 /* 180.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B4E2445039E00124B06 /* 180.png */; };
+		01925B5B2445039E00124B06 /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B4F2445039E00124B06 /* 120.png */; };
+		01925B5C2445039E00124B06 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B502445039E00124B06 /* 1024.png */; };
+		01925B5F244503B500124B06 /* CameraIconFixed.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B5D244503B500124B06 /* CameraIconFixed.png */; };
+		01925B60244503B500124B06 /* 76.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B5E244503B500124B06 /* 76.png */; };
+		01925B62244503C300124B06 /* IdentiBreedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B61244503C300124B06 /* IdentiBreedLogo.png */; };
+		01925B64244503CB00124B06 /* 40.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B63244503CB00124B06 /* 40.png */; };
+		01925B692445040800124B06 /* CatClassifierFixed.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01925B652445040800124B06 /* CatClassifierFixed.mlmodel */; };
+		01925B6A2445040800124B06 /* DogsVsCats.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01925B662445040800124B06 /* DogsVsCats.mlmodel */; };
+		01925B6B2445040800124B06 /* DogClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01925B672445040800124B06 /* DogClassifier.mlmodel */; };
+		01925B6C2445040800124B06 /* CatClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01925B682445040800124B06 /* CatClassifier.mlmodel */; };
+		5B2508BE5AC6DA6FDA9AD875 /* libPods-IdentiBreedPerfected.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 656792315D5B6B7C4818F593 /* libPods-IdentiBreedPerfected.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		01925B292445037700124B06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01925B0A2445037600124B06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01925B112445037600124B06;
+			remoteInfo = IdentiBreedPerfected;
+		};
+		01925B342445037700124B06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01925B0A2445037600124B06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01925B112445037600124B06;
+			remoteInfo = IdentiBreedPerfected;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01796BBD244509EA00950425 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01925B122445037600124B06 /* IdentiBreedPerfected.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdentiBreedPerfected.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01925B152445037600124B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		01925B172445037600124B06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		01925B192445037600124B06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		01925B1C2445037600124B06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		01925B1E2445037700124B06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		01925B212445037700124B06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		01925B232445037700124B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01925B282445037700124B06 /* IdentiBreedPerfectedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IdentiBreedPerfectedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01925B2C2445037700124B06 /* IdentiBreedPerfectedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentiBreedPerfectedTests.swift; sourceTree = "<group>"; };
+		01925B2E2445037700124B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01925B332445037700124B06 /* IdentiBreedPerfectedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IdentiBreedPerfectedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01925B372445037700124B06 /* IdentiBreedPerfectedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentiBreedPerfectedUITests.swift; sourceTree = "<group>"; };
+		01925B392445037700124B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01925B452445039D00124B06 /* 20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 20.png; path = ../../IdentiBreed/AppLogoResized/20.png; sourceTree = "<group>"; };
+		01925B462445039D00124B06 /* 87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 87.png; path = ../../IdentiBreed/AppLogoResized/87.png; sourceTree = "<group>"; };
+		01925B472445039D00124B06 /* 167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 167.png; path = ../../IdentiBreed/AppLogoResized/167.png; sourceTree = "<group>"; };
+		01925B482445039D00124B06 /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 80.png; path = ../../IdentiBreed/AppLogoResized/80.png; sourceTree = "<group>"; };
+		01925B492445039D00124B06 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif"; path = "../../IdentiBreed/AppLogoResized/dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif"; sourceTree = "<group>"; };
+		01925B4A2445039E00124B06 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 58.png; path = ../../IdentiBreed/AppLogoResized/58.png; sourceTree = "<group>"; };
+		01925B4B2445039E00124B06 /* 60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 60.png; path = ../../IdentiBreed/AppLogoResized/60.png; sourceTree = "<group>"; };
+		01925B4C2445039E00124B06 /* 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 29.png; path = ../../IdentiBreed/AppLogoResized/29.png; sourceTree = "<group>"; };
+		01925B4D2445039E00124B06 /* 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 152.png; path = ../../IdentiBreed/AppLogoResized/152.png; sourceTree = "<group>"; };
+		01925B4E2445039E00124B06 /* 180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 180.png; path = ../../IdentiBreed/AppLogoResized/180.png; sourceTree = "<group>"; };
+		01925B4F2445039E00124B06 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 120.png; path = ../../IdentiBreed/AppLogoResized/120.png; sourceTree = "<group>"; };
+		01925B502445039E00124B06 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1024.png; path = ../../IdentiBreed/AppLogoResized/1024.png; sourceTree = "<group>"; };
+		01925B5D244503B500124B06 /* CameraIconFixed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CameraIconFixed.png; path = ../../IdentiBreed/AppLogoResized/CameraIconFixed.png; sourceTree = "<group>"; };
+		01925B5E244503B500124B06 /* 76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 76.png; path = ../../IdentiBreed/AppLogoResized/76.png; sourceTree = "<group>"; };
+		01925B61244503C300124B06 /* IdentiBreedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IdentiBreedLogo.png; path = ../../IdentiBreed/AppLogoResized/IdentiBreedLogo.png; sourceTree = "<group>"; };
+		01925B63244503CB00124B06 /* 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 40.png; path = ../../IdentiBreed/AppLogoResized/40.png; sourceTree = "<group>"; };
+		01925B652445040800124B06 /* CatClassifierFixed.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CatClassifierFixed.mlmodel; path = ../../IdentiBreed/IdentiBreed/CatClassifierFixed.mlmodel; sourceTree = "<group>"; };
+		01925B662445040800124B06 /* DogsVsCats.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DogsVsCats.mlmodel; path = ../../IdentiBreed/IdentiBreed/DogsVsCats.mlmodel; sourceTree = "<group>"; };
+		01925B672445040800124B06 /* DogClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DogClassifier.mlmodel; path = ../../IdentiBreed/IdentiBreed/DogClassifier.mlmodel; sourceTree = "<group>"; };
+		01925B682445040800124B06 /* CatClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CatClassifier.mlmodel; path = ../../IdentiBreed/IdentiBreed/CatClassifier.mlmodel; sourceTree = "<group>"; };
+		14B182506725382CDCF03236 /* Pods-IdentiBreedPerfected.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdentiBreedPerfected.release.xcconfig"; path = "Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected.release.xcconfig"; sourceTree = "<group>"; };
+		656792315D5B6B7C4818F593 /* libPods-IdentiBreedPerfected.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IdentiBreedPerfected.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6AC2564A47E1C6A0B2A6C62 /* Pods-IdentiBreedPerfected.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdentiBreedPerfected.debug.xcconfig"; path = "Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01925B0F2445037600124B06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B2508BE5AC6DA6FDA9AD875 /* libPods-IdentiBreedPerfected.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01925B252445037700124B06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01925B302445037700124B06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01925B092445037600124B06 = {
+			isa = PBXGroup;
+			children = (
+				01925B142445037600124B06 /* IdentiBreedPerfected */,
+				01925B2B2445037700124B06 /* IdentiBreedPerfectedTests */,
+				01925B362445037700124B06 /* IdentiBreedPerfectedUITests */,
+				01925B132445037600124B06 /* Products */,
+				4DD039B6225EA6FBC84B0D88 /* Pods */,
+				BDD940069D080B0E7995BED1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		01925B132445037600124B06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01925B122445037600124B06 /* IdentiBreedPerfected.app */,
+				01925B282445037700124B06 /* IdentiBreedPerfectedTests.xctest */,
+				01925B332445037700124B06 /* IdentiBreedPerfectedUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01925B142445037600124B06 /* IdentiBreedPerfected */ = {
+			isa = PBXGroup;
+			children = (
+				01925B152445037600124B06 /* AppDelegate.swift */,
+				01925B172445037600124B06 /* SceneDelegate.swift */,
+				01925B192445037600124B06 /* ViewController.swift */,
+				01925B1B2445037600124B06 /* Main.storyboard */,
+				01925B1E2445037700124B06 /* Assets.xcassets */,
+				01925B202445037700124B06 /* LaunchScreen.storyboard */,
+				01925B232445037700124B06 /* Info.plist */,
+				01925B452445039D00124B06 /* 20.png */,
+				01925B4C2445039E00124B06 /* 29.png */,
+				01925B4A2445039E00124B06 /* 58.png */,
+				01925B4B2445039E00124B06 /* 60.png */,
+				01925B482445039D00124B06 /* 80.png */,
+				01925B462445039D00124B06 /* 87.png */,
+				01925B4F2445039E00124B06 /* 120.png */,
+				01925B4D2445039E00124B06 /* 152.png */,
+				01925B472445039D00124B06 /* 167.png */,
+				01925B4E2445039E00124B06 /* 180.png */,
+				01925B502445039E00124B06 /* 1024.png */,
+				01925B492445039D00124B06 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */,
+				01925B5E244503B500124B06 /* 76.png */,
+				01925B5D244503B500124B06 /* CameraIconFixed.png */,
+				01925B61244503C300124B06 /* IdentiBreedLogo.png */,
+				01925B63244503CB00124B06 /* 40.png */,
+				01925B682445040800124B06 /* CatClassifier.mlmodel */,
+				01925B652445040800124B06 /* CatClassifierFixed.mlmodel */,
+				01925B672445040800124B06 /* DogClassifier.mlmodel */,
+				01925B662445040800124B06 /* DogsVsCats.mlmodel */,
+				01796BBD244509EA00950425 /* GoogleService-Info.plist */,
+			);
+			path = IdentiBreedPerfected;
+			sourceTree = "<group>";
+		};
+		01925B2B2445037700124B06 /* IdentiBreedPerfectedTests */ = {
+			isa = PBXGroup;
+			children = (
+				01925B2C2445037700124B06 /* IdentiBreedPerfectedTests.swift */,
+				01925B2E2445037700124B06 /* Info.plist */,
+			);
+			path = IdentiBreedPerfectedTests;
+			sourceTree = "<group>";
+		};
+		01925B362445037700124B06 /* IdentiBreedPerfectedUITests */ = {
+			isa = PBXGroup;
+			children = (
+				01925B372445037700124B06 /* IdentiBreedPerfectedUITests.swift */,
+				01925B392445037700124B06 /* Info.plist */,
+			);
+			path = IdentiBreedPerfectedUITests;
+			sourceTree = "<group>";
+		};
+		4DD039B6225EA6FBC84B0D88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6AC2564A47E1C6A0B2A6C62 /* Pods-IdentiBreedPerfected.debug.xcconfig */,
+				14B182506725382CDCF03236 /* Pods-IdentiBreedPerfected.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BDD940069D080B0E7995BED1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				656792315D5B6B7C4818F593 /* libPods-IdentiBreedPerfected.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01925B112445037600124B06 /* IdentiBreedPerfected */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01925B3C2445037700124B06 /* Build configuration list for PBXNativeTarget "IdentiBreedPerfected" */;
+			buildPhases = (
+				E5C467340BC555BB3D6633DF /* [CP] Check Pods Manifest.lock */,
+				01925B0E2445037600124B06 /* Sources */,
+				01925B0F2445037600124B06 /* Frameworks */,
+				01925B102445037600124B06 /* Resources */,
+				A82F3F71924A4307328E932D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IdentiBreedPerfected;
+			productName = IdentiBreedPerfected;
+			productReference = 01925B122445037600124B06 /* IdentiBreedPerfected.app */;
+			productType = "com.apple.product-type.application";
+		};
+		01925B272445037700124B06 /* IdentiBreedPerfectedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01925B3F2445037700124B06 /* Build configuration list for PBXNativeTarget "IdentiBreedPerfectedTests" */;
+			buildPhases = (
+				01925B242445037700124B06 /* Sources */,
+				01925B252445037700124B06 /* Frameworks */,
+				01925B262445037700124B06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01925B2A2445037700124B06 /* PBXTargetDependency */,
+			);
+			name = IdentiBreedPerfectedTests;
+			productName = IdentiBreedPerfectedTests;
+			productReference = 01925B282445037700124B06 /* IdentiBreedPerfectedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		01925B322445037700124B06 /* IdentiBreedPerfectedUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01925B422445037700124B06 /* Build configuration list for PBXNativeTarget "IdentiBreedPerfectedUITests" */;
+			buildPhases = (
+				01925B2F2445037700124B06 /* Sources */,
+				01925B302445037700124B06 /* Frameworks */,
+				01925B312445037700124B06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01925B352445037700124B06 /* PBXTargetDependency */,
+			);
+			name = IdentiBreedPerfectedUITests;
+			productName = IdentiBreedPerfectedUITests;
+			productReference = 01925B332445037700124B06 /* IdentiBreedPerfectedUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01925B0A2445037600124B06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Liege LLC.";
+				TargetAttributes = {
+					01925B112445037600124B06 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					01925B272445037700124B06 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 01925B112445037600124B06;
+					};
+					01925B322445037700124B06 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 01925B112445037600124B06;
+					};
+				};
+			};
+			buildConfigurationList = 01925B0D2445037600124B06 /* Build configuration list for PBXProject "IdentiBreedPerfected" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 01925B092445037600124B06;
+			productRefGroup = 01925B132445037600124B06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01925B112445037600124B06 /* IdentiBreedPerfected */,
+				01925B272445037700124B06 /* IdentiBreedPerfectedTests */,
+				01925B322445037700124B06 /* IdentiBreedPerfectedUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01925B102445037600124B06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01925B62244503C300124B06 /* IdentiBreedLogo.png in Resources */,
+				01925B532445039E00124B06 /* 167.png in Resources */,
+				01925B552445039E00124B06 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif in Resources */,
+				01925B5A2445039E00124B06 /* 180.png in Resources */,
+				01925B542445039E00124B06 /* 80.png in Resources */,
+				01925B522445039E00124B06 /* 87.png in Resources */,
+				01925B562445039E00124B06 /* 58.png in Resources */,
+				01925B572445039E00124B06 /* 60.png in Resources */,
+				01925B60244503B500124B06 /* 76.png in Resources */,
+				01925B592445039E00124B06 /* 152.png in Resources */,
+				01925B5F244503B500124B06 /* CameraIconFixed.png in Resources */,
+				01925B222445037700124B06 /* LaunchScreen.storyboard in Resources */,
+				01925B1F2445037700124B06 /* Assets.xcassets in Resources */,
+				01925B64244503CB00124B06 /* 40.png in Resources */,
+				01925B582445039E00124B06 /* 29.png in Resources */,
+				01925B5B2445039E00124B06 /* 120.png in Resources */,
+				01925B5C2445039E00124B06 /* 1024.png in Resources */,
+				01796BBE244509EA00950425 /* GoogleService-Info.plist in Resources */,
+				01925B1D2445037600124B06 /* Main.storyboard in Resources */,
+				01925B512445039E00124B06 /* 20.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01925B262445037700124B06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01925B312445037700124B06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A82F3F71924A4307328E932D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5C467340BC555BB3D6633DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IdentiBreedPerfected-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01925B0E2445037600124B06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01925B1A2445037600124B06 /* ViewController.swift in Sources */,
+				01925B6A2445040800124B06 /* DogsVsCats.mlmodel in Sources */,
+				01925B6B2445040800124B06 /* DogClassifier.mlmodel in Sources */,
+				01925B6C2445040800124B06 /* CatClassifier.mlmodel in Sources */,
+				01925B162445037600124B06 /* AppDelegate.swift in Sources */,
+				01925B182445037600124B06 /* SceneDelegate.swift in Sources */,
+				01925B692445040800124B06 /* CatClassifierFixed.mlmodel in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01925B242445037700124B06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01925B2D2445037700124B06 /* IdentiBreedPerfectedTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01925B2F2445037700124B06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01925B382445037700124B06 /* IdentiBreedPerfectedUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01925B2A2445037700124B06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01925B112445037600124B06 /* IdentiBreedPerfected */;
+			targetProxy = 01925B292445037700124B06 /* PBXContainerItemProxy */;
+		};
+		01925B352445037700124B06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01925B112445037600124B06 /* IdentiBreedPerfected */;
+			targetProxy = 01925B342445037700124B06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		01925B1B2445037600124B06 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01925B1C2445037600124B06 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		01925B202445037700124B06 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01925B212445037700124B06 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01925B3A2445037700124B06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		01925B3B2445037700124B06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		01925B3D2445037700124B06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6AC2564A47E1C6A0B2A6C62 /* Pods-IdentiBreedPerfected.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GKF7STU5Y;
+				INFOPLIST_FILE = IdentiBreedPerfected/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreedPerfected;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		01925B3E2445037700124B06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14B182506725382CDCF03236 /* Pods-IdentiBreedPerfected.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GKF7STU5Y;
+				INFOPLIST_FILE = IdentiBreedPerfected/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreedPerfected;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		01925B402445037700124B06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GKF7STU5Y;
+				INFOPLIST_FILE = IdentiBreedPerfectedTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreedPerfectedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IdentiBreedPerfected.app/IdentiBreedPerfected";
+			};
+			name = Debug;
+		};
+		01925B412445037700124B06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GKF7STU5Y;
+				INFOPLIST_FILE = IdentiBreedPerfectedTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreedPerfectedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IdentiBreedPerfected.app/IdentiBreedPerfected";
+			};
+			name = Release;
+		};
+		01925B432445037700124B06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GKF7STU5Y;
+				INFOPLIST_FILE = IdentiBreedPerfectedUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreedPerfectedUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IdentiBreedPerfected;
+			};
+			name = Debug;
+		};
+		01925B442445037700124B06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GKF7STU5Y;
+				INFOPLIST_FILE = IdentiBreedPerfectedUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreedPerfectedUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IdentiBreedPerfected;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01925B0D2445037600124B06 /* Build configuration list for PBXProject "IdentiBreedPerfected" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01925B3A2445037700124B06 /* Debug */,
+				01925B3B2445037700124B06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01925B3C2445037700124B06 /* Build configuration list for PBXNativeTarget "IdentiBreedPerfected" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01925B3D2445037700124B06 /* Debug */,
+				01925B3E2445037700124B06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01925B3F2445037700124B06 /* Build configuration list for PBXNativeTarget "IdentiBreedPerfectedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01925B402445037700124B06 /* Debug */,
+				01925B412445037700124B06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01925B422445037700124B06 /* Build configuration list for PBXNativeTarget "IdentiBreedPerfectedUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01925B432445037700124B06 /* Debug */,
+				01925B442445037700124B06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01925B0A2445037600124B06 /* Project object */;
+}
