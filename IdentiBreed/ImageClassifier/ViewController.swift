@@ -11,8 +11,8 @@ class ViewController: UIViewController
   @IBOutlet weak var petImage: UIImageView!
   @IBOutlet weak var resultsText: UILabel!
   let comparable = false
-  let userBreeds = []
-  let userProbabilities = []
+  var userBreeds: Array<String>?
+  var userProbabilities: Array<Int>?
   
   // MARK: - View Life Cycle
   override func viewDidLoad()
@@ -26,7 +26,7 @@ class ViewController: UIViewController
 // MARK: - IBActions
 extension ViewController {
   @IBAction func comparePet(_ sender: Any) {
-    guard let breeds = userBreeds else { return }
+    guard userBreeds != nil else { return }
     let db = Firestore.firestore()
     db.collection("imageInfos")
     .getDocuments() { (querySnapshot, err) in
@@ -36,24 +36,24 @@ extension ViewController {
       }
       else
       {
-        let indexer = 0
-        let similarPets = [()]
+        var indexer = 0
+        var similarPets = [(QueryDocumentSnapshot, Int)]()
         for document in querySnapshot!.documents
         {
           let breeds = document.data()["Breeds"] as! [String]
           let probabilities = document.data()["Probabilities"] as! [Int]
-          let similarityScore = 0
+          var similarityScore = 0
           for breed in breeds
           {
-            if (userBreeds.contains(breed))
+            if (self.userBreeds!.contains(breed))
             {
-              if (userProbabilities[indexer] > probabilities[indexer])
+              if (self.userProbabilities![indexer] > probabilities[indexer])
               {
-                similarityScore += (probabilities[indexer]/userProbabilities[indexer])
+                similarityScore += (probabilities[indexer]/self.userProbabilities![indexer])
               }
-              else if (userProbabilities[indexer] < probabilites[indexer])
+              else if (self.userProbabilities![indexer] < probabilities[indexer])
               {
-                similarityScore += (userProbabilities[indexer]/probabilities[indexer])
+                similarityScore += (self.userProbabilities![indexer]/probabilities[indexer])
               }
               else
               {
@@ -63,7 +63,8 @@ extension ViewController {
           }
           if similarityScore > 0
           {
-            similarPets.append((document, similarityScore))
+            let temp = (document, similarityScore)
+            similarPets.append(temp)
           }
           indexer += 1
         }
@@ -127,42 +128,38 @@ extension ViewController {
       let metadata = StorageMetadata()
       metadata.contentType = "image/jpeg"
       imageRef.putData(imageData, metadata: metadata) { metaData, error in
-          if let error = error
+          if error != nil
           {
-              self.presentAlert(title: "Error", message: error.localizedDescription)
               return
           }
           imageRef.downloadURL { (url, error) in
-              if let error = error
-              {
-                  self.presentAlert(title: "Error", message: error.localizedDescription)
-                  return
-              }
-              guard let url = url else {
-                  self.presentAlert(title: "Error", message: "Something went wrong")
-                  return
-              }
-              let dataReference = Firestore.firestore().collection("imageInfos").document()
-              let urlString = url.absoluteString
-              let data = [
-                "Breeds": breeds,
-                "Probabilities": probabilities,
-                "Link": urlString
-              ]
+            if error != nil
+            {
+                return
+            }
+            guard let url = url else {
+                return
+            }
+            let dataReference = Firestore.firestore().collection("imageInfos").document()
+            let urlString = url.absoluteString
+            let data = [
+              "Breeds": breeds,
+              "Probabilities": probabilities,
+              "Link": urlString
+              ] as [String : Any]
             dataReference.setData(data, completion: {(err) in
-              if let err = err {
-                self.presentAlert(title: "Error", message: err.localizedDescription)
+              if err != nil {
                 return
               }
             })
         }
-      }
+    }
   }
   func classifyAnimal(image: UIImage, imageTwo: CIImage) {
     resultsText.text = "Analyzing your pet..."
     let model = DogsVsCats();
     guard let prediction = try? model.prediction(image: image.cgImage! as! CVPixelBuffer) else {fatalError("Unexpected runtime error...")}
-    if(prediction.classLabel == "Cats")
+    if (prediction.classLabel == "Cats")
     {
       classifyCatType(image: imageTwo, uiimage: image)
     }
@@ -183,21 +180,21 @@ extension ViewController {
       let results = request.results as? [VNClassificationObservation]
 
       var outputText = ""
-      let probabilities = []
-      let breeds = []
+      var probabilities = Array<Int>()
+      var breeds = Array<String>()
       
       for res in results!{
-        let temp = res.identifier as String
-        temp.dropFirst(10)
-        let breed = temp.replacingOccurrences(of: "_", with: " ")
+        var breed = res.identifier as String
+        breed = String(breed.dropFirst(10))
+        breed = breed.replacingOccurrences(of: "_", with: " ")
         let probability = Int(res.confidence*100)
         outputText += "\(breed.capitalized): \(probability)%\n"
         breeds.append(breed.capitalized)
         probabilities.append(probability)
       }
-      userBreeds = breeds
-      userProbabilities = probabilities
-      uploadPetImage(uiimage, breeds, probabilities)
+      self!.userBreeds = breeds
+      self!.userProbabilities = probabilities
+      self!.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
       DispatchQueue.main.async { [weak self] in
         self?.resultsText.text! = outputText
       }
@@ -216,7 +213,7 @@ extension ViewController {
   func classifyCatType(image: CIImage, uiimage: UIImage)
   {
     // Load the ML model through its generated class
-    guard let model = try? VNCoreMLModel(for: DogClassifier().model) else {
+    guard let model = try? VNCoreMLModel(for: CatClassifier().model) else {
       fatalError("Could not load Dog Classifier model...")
     }
     
@@ -225,16 +222,16 @@ extension ViewController {
       let results = request.results as? [VNClassificationObservation]
 
       var outputText = ""
-      let breeds = []
-      let probabilities = []
+      var breeds = Array<String>()
+      var probabilities = Array<Int>()
       for res in results!{
         outputText += "\(res.identifier): \(Int(res.confidence * 100))%\n"
         breeds.append(res.identifier as String)
         probabilities.append(Int(res.confidence*100))
       }
-      userBreeds = breeds
-      userProbabilities = probabilities
-      uploadPetImage(uiimage, breeds, probabilities)
+      self!.userBreeds = breeds
+      self!.userProbabilities = probabilities
+      self!.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
       DispatchQueue.main.async { [weak self] in
         self?.resultsText.text! = outputText
       }

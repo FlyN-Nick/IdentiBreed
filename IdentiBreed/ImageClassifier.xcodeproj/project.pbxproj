@@ -14,12 +14,13 @@
 		01CC85DE2443E66200D80F44 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif in Resources */ = {isa = PBXBuildFile; fileRef = 01CC85D92443E64400D80F44 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */; };
 		01CC85DF2443E66800D80F44 /* CameraIconFixed.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CC85D62443E63E00D80F44 /* CameraIconFixed.png */; };
 		01CC85E02443E66B00D80F44 /* CameraIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01CC85C72443E62400D80F44 /* CameraIcon.jpg */; };
+		01CC85E2244430CF00D80F44 /* CatClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01CC85E1244430CF00D80F44 /* CatClassifier.mlmodel */; };
 		CD8A65A11EE7EC0700942922 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A65A01EE7EC0700942922 /* AppDelegate.swift */; };
 		CD8A65A31EE7EC0700942922 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A65A21EE7EC0700942922 /* ViewController.swift */; };
 		CD8A65A61EE7EC0700942922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8A65A41EE7EC0700942922 /* Main.storyboard */; };
 		CD8A65A81EE7EC0700942922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8A65A71EE7EC0700942922 /* Assets.xcassets */; };
 		CD8A65AB1EE7EC0700942922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8A65A91EE7EC0700942922 /* LaunchScreen.storyboard */; };
-		F954A84B11D40AE664786363 /* libPods-ImageClassifier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD593363A08119534E7E6659 /* libPods-ImageClassifier.a */; };
+		CE9B741319BC38A5C5CF0238 /* libPods-ImageClassifier.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B2B515208566A30888EBD5 /* libPods-ImageClassifier.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +46,9 @@
 		01CC85D72443E64200D80F44 /* CameraIconFixed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CameraIconFixed.png; path = Pictures/CameraIconFixed.png; sourceTree = "<group>"; };
 		01CC85D92443E64400D80F44 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif"; sourceTree = "<group>"; };
 		01CC85DB2443E64B00D80F44 /* IdentiBreedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IdentiBreedLogo.png; sourceTree = "<group>"; };
-		6E9B39122B345AE65F1EB829 /* Pods-ImageClassifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassifier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageClassifier/Pods-ImageClassifier.debug.xcconfig"; sourceTree = "<group>"; };
-		8754754592909CF29986AAEE /* Pods-ImageClassifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassifier.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageClassifier/Pods-ImageClassifier.release.xcconfig"; sourceTree = "<group>"; };
+		01CC85E1244430CF00D80F44 /* CatClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CatClassifier.mlmodel; sourceTree = "<group>"; };
+		706CD86536E155A6ED658919 /* Pods-ImageClassifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassifier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageClassifier/Pods-ImageClassifier.debug.xcconfig"; sourceTree = "<group>"; };
+		7373AB1DF87801D4B7826A72 /* Pods-ImageClassifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassifier.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageClassifier/Pods-ImageClassifier.release.xcconfig"; sourceTree = "<group>"; };
 		CD8A659D1EE7EC0700942922 /* IdentiBreed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdentiBreed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8A65A01EE7EC0700942922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD8A65A21EE7EC0700942922 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 		CD8A65A71EE7EC0700942922 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD8A65AA1EE7EC0700942922 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD8A65AC1EE7EC0700942922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD593363A08119534E7E6659 /* libPods-ImageClassifier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ImageClassifier.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9B2B515208566A30888EBD5 /* libPods-ImageClassifier.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ImageClassifier.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +64,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F954A84B11D40AE664786363 /* libPods-ImageClassifier.a in Frameworks */,
+				CE9B741319BC38A5C5CF0238 /* libPods-ImageClassifier.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0066134211B688046FB334C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9B2B515208566A30888EBD5 /* libPods-ImageClassifier.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		01CC85C82443E63200D80F44 /* AppLogoResized */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,21 +99,13 @@
 			path = AppLogoResized;
 			sourceTree = "<group>";
 		};
-		580EFBCFBD3B77D2F7B36E69 /* Pods */ = {
+		613DE8FF2253FFDE85BA3288 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6E9B39122B345AE65F1EB829 /* Pods-ImageClassifier.debug.xcconfig */,
-				8754754592909CF29986AAEE /* Pods-ImageClassifier.release.xcconfig */,
+				706CD86536E155A6ED658919 /* Pods-ImageClassifier.debug.xcconfig */,
+				7373AB1DF87801D4B7826A72 /* Pods-ImageClassifier.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		B51EF169E26540E8D7353BA7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FD593363A08119534E7E6659 /* libPods-ImageClassifier.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CD8A65941EE7EC0700942922 = {
@@ -112,8 +114,8 @@
 				01CC85C62443D93D00D80F44 /* CatClassifier.playground */,
 				CD8A659F1EE7EC0700942922 /* ImageClassifier */,
 				CD8A659E1EE7EC0700942922 /* Products */,
-				580EFBCFBD3B77D2F7B36E69 /* Pods */,
-				B51EF169E26540E8D7353BA7 /* Frameworks */,
+				613DE8FF2253FFDE85BA3288 /* Pods */,
+				0066134211B688046FB334C5 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +149,7 @@
 				CD8A65A91EE7EC0700942922 /* LaunchScreen.storyboard */,
 				01CC85BC2443D10100D80F44 /* DogClassifier.mlmodel */,
 				01CC85BE2443D10800D80F44 /* DogsVsCats.mlmodel */,
+				01CC85E1244430CF00D80F44 /* CatClassifier.mlmodel */,
 				01CC85C72443E62400D80F44 /* CameraIcon.jpg */,
 				01CC85D62443E63E00D80F44 /* CameraIconFixed.png */,
 				01CC85D72443E64200D80F44 /* CameraIconFixed.png */,
@@ -164,11 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD8A65AF1EE7EC0700942922 /* Build configuration list for PBXNativeTarget "ImageClassifier" */;
 			buildPhases = (
-				C7B4E61916106FF42A68FEF2 /* [CP] Check Pods Manifest.lock */,
+				97DB5573DA30E45D324E8A68 /* [CP] Check Pods Manifest.lock */,
 				CD8A65991EE7EC0700942922 /* Sources */,
 				CD8A659A1EE7EC0700942922 /* Frameworks */,
 				CD8A659B1EE7EC0700942922 /* Resources */,
-				019DC1E38B2D6DF5098EB429 /* [CP] Copy Pods Resources */,
+				E54C6F90D4F737FE7ABCF770 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,25 +236,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		019DC1E38B2D6DF5098EB429 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ImageClassifier/Pods-ImageClassifier-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImageClassifier/Pods-ImageClassifier-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C7B4E61916106FF42A68FEF2 /* [CP] Check Pods Manifest.lock */ = {
+		97DB5573DA30E45D324E8A68 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,6 +254,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E54C6F90D4F737FE7ABCF770 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ImageClassifier/Pods-ImageClassifier-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImageClassifier/Pods-ImageClassifier-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -280,6 +283,7 @@
 				CD8A65A11EE7EC0700942922 /* AppDelegate.swift in Sources */,
 				01CC85BD2443D10100D80F44 /* DogClassifier.mlmodel in Sources */,
 				01CC85BF2443D10800D80F44 /* DogsVsCats.mlmodel in Sources */,
+				01CC85E2244430CF00D80F44 /* CatClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +424,7 @@
 		};
 		CD8A65B01EE7EC0700942922 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E9B39122B345AE65F1EB829 /* Pods-ImageClassifier.debug.xcconfig */;
+			baseConfigurationReference = 706CD86536E155A6ED658919 /* Pods-ImageClassifier.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -442,7 +446,7 @@
 		};
 		CD8A65B11EE7EC0700942922 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8754754592909CF29986AAEE /* Pods-ImageClassifier.release.xcconfig */;
+			baseConfigurationReference = 7373AB1DF87801D4B7826A72 /* Pods-ImageClassifier.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
