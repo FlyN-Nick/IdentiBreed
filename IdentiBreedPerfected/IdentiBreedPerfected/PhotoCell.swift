@@ -6,13 +6,15 @@
 //  Copyright © 2020 Liege LLC. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import Foundation
 
-class PhotoCell: UITableViewCell {
-    @IBOutlet weak var imageView: UIImageView!
+class PhotoCell: UITableViewCell
+{
+    @IBOutlet weak var petImage: UIImageView!
     func setPhoto(image: UIImage)
     {
-        imageView.image = image
+        print(image)
+        petImage.image = image
     }
 }

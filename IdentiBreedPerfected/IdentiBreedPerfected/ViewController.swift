@@ -11,10 +11,10 @@ class ViewController: UIViewController
   @IBOutlet weak var petImage: UIImageView!
   @IBOutlet weak var resultsText: UILabel!
   @IBOutlet weak var similarPetsView: UITableView!
-  let comparable = false
-  var userBreeds: Array<String>?
-  var userProbabilities: Array<Int>?
-  var similarPetsSpecial = [(QueryDocumentSnapshot, Int)]()
+    
+  var badCount = 0
+    
+  var userSimilarPets = [(String, Int)]()
   
   // MARK: - View Did Load
   override func viewDidLoad()
@@ -22,6 +22,18 @@ class ViewController: UIViewController
     super.viewDidLoad()
     similarPetsView.delegate = self
     similarPetsView.dataSource = self
+    let db = Firestore.firestore()
+    db.collection("imageInfos")
+        .getDocuments() { (querySnapshot, err) in
+            if let err = err
+            {
+                print("Error getting documents: \(err)")
+            }
+            else
+            {
+                self.badCount = querySnapshot!.documents.count
+            }
+    }
     //petImage.translatesAutoresizingMaskIntoConstraints = false;
     /*let captureSession = AVCaptureSession()
     guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
@@ -34,62 +46,11 @@ class ViewController: UIViewController
   }
 }
 
-extension ViewController {
-  // MARK: - Compare Pet Button
-  @IBAction func comparePet(_ sender: Any) {
-    print("comparePet called")
-    guard userBreeds != nil else { return }
-    print("userBreeds is not nil!")
-    let db = Firestore.firestore()
-    db.collection("imageInfos")
-    .getDocuments() { (querySnapshot, err) in
-      if let err = err
-      {
-          print("Error getting documents: \(err)")
-      }
-      else
-      {
-        print("successfull query")
-        var indexer = 0
-        var similarPets = [(QueryDocumentSnapshot, Int)]()
-        for document in querySnapshot!.documents
-        {
-          let breeds = document.data()["Breeds"] as! [String]
-          let probabilities = document.data()["Probabilities"] as! [Int]
-          var similarityScore = 0
-          for breed in breeds
-          {
-            if (self.userBreeds!.contains(breed))
-            {
-              if (self.userProbabilities![indexer] > probabilities[indexer])
-              {
-                similarityScore += (probabilities[indexer]/self.userProbabilities![indexer])
-              }
-              else if (self.userProbabilities![indexer] < probabilities[indexer])
-              {
-                similarityScore += (self.userProbabilities![indexer]/probabilities[indexer])
-              }
-              else
-              {
-                similarityScore += 1
-              }
-            }
-          }
-          if similarityScore > 0
-          {
-            let temp = (document, similarityScore)
-            similarPets.append(temp)
-          }
-          indexer += 1
-        }
-        print("similarPets: \(similarPets)")
-        self.similarPetsSpecial = similarPets
-        self.similarPetsView.reloadData()
-      }
-    }
-  }
+extension ViewController
+{
   // MARK: - Pick Image Button
-  @IBAction func pickImage(_ sender: Any) {
+  @IBAction func pickImage(_ sender: Any)
+  {
     let imagePickerController = UIImagePickerController()
     imagePickerController.delegate = self
     let actionSheet = UIAlertController(title: "Upload photo from:", message: "", preferredStyle: .actionSheet)
@@ -112,7 +73,8 @@ extension ViewController {
     self.present(actionSheet, animated: true)
   }
     // MARK: - Pick Image Text Button
-    @IBAction func pickImageText(_ sender: Any) {
+    @IBAction func pickImageText(_ sender: Any)
+    {
       let imagePickerController = UIImagePickerController()
       imagePickerController.delegate = self
       let actionSheet = UIAlertController(title: "Upload photo from:", message: "", preferredStyle: .actionSheet)
@@ -136,7 +98,66 @@ extension ViewController {
     }
 }
 
-extension ViewController {
+extension ViewController
+{
+    // MARK: - Compare Pet Button
+    func comparePet(userBreeds: [String], userProbabilities: [Int])
+    {
+        let db = Firestore.firestore()
+        db.collection("imageInfos")
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err
+                {
+                    print("Error getting documents: \(err)")
+                }
+                else
+                {
+                    print("Successfull firebase query!")
+                    var indexer = 0
+                    var similarPets = [(String, Int)]()
+                    print("made it")
+                    print("# of documents: \(querySnapshot!.documents.count)")
+                    for document in querySnapshot!.documents
+                    {
+                        let breeds = document.data()["Breeds"] as! [String]
+                        let probabilities = document.data()["Probabilities"] as! [Int]
+                        var similarityScore = 0
+                        print("# of breeds: \(breeds.count)")
+                        for breed in breeds
+                        {
+                            if (userBreeds.contains(breed))
+                            {
+                                print("userProbs.count: \(userProbabilities.count), userIndex: \(userBreeds.firstIndex(of: breed)!), probabilities.count: \(probabilities.count), indexer: \(indexer)")
+                                if (userProbabilities[userBreeds.firstIndex(of: breed)!] > probabilities[indexer])
+                                {
+                                    similarityScore += (probabilities[indexer]/userProbabilities[userBreeds.firstIndex(of: breed)!])
+                                }
+                                else if (userProbabilities[userBreeds.firstIndex(of: breed)!] < probabilities[indexer])
+                                {
+                                    similarityScore += (userProbabilities[userBreeds.firstIndex(of: breed)!]/probabilities[indexer])
+                                }
+                                else
+                                {
+                                    similarityScore += 1
+                                }
+                            }
+                        }
+                        if similarityScore > 0
+                        {
+                            let temp = (document.data()["Link"] as! String, similarityScore)
+                            similarPets.append(temp)
+                        }
+                        indexer += 1
+                    }
+                    let sortedSimilarPets = similarPets.sorted {
+                        $0.1 > $1.1
+                    }
+                    self.userSimilarPets = sortedSimilarPets
+                    print("SimilarPets: \(self.userSimilarPets)")
+                    self.similarPetsView.reloadData()
+                }
+        }
+    }
   // MARK: - Firebase Upload
   func uploadPetImage(_ image: UIImage, breeds: [String], probabilities: [Int])
   {
@@ -151,7 +172,6 @@ extension ViewController {
           {
               return
           }
-          print("image uploaded")
           imageRef.downloadURL { (url, error) in
             if error != nil
             {
@@ -169,19 +189,22 @@ extension ViewController {
               ] as [String : Any]
             print("url: \(urlString), data: \(data)")
             dataReference.setData(data, completion: {(err) in
-              if err != nil {
+              if err != nil
+              {
                 return
               }
               else
               {
-                print("image data uploaded")
-                }
+                print("Image and data successfully uploaded!")
+                self.comparePet(userBreeds: breeds, userProbabilities: probabilities)
+              }
             })
         }
     }
   }
   // MARK: - Classify Animal
-  func classifyAnimal(image: UIImage, imageTwo: CIImage) {
+  func classifyAnimal(image: UIImage, imageTwo: CIImage)
+  {
     resultsText.text = "Analyzing your pet..."
     
     // Load the ML model through its generated class
@@ -205,9 +228,12 @@ extension ViewController {
     // Run the classifier on global dispatch queue
     let handler = VNImageRequestHandler(ciImage: imageTwo)
     DispatchQueue.global(qos: .userInteractive).async {
-      do {
+      do
+      {
         try handler.perform([request])
-      } catch {
+      }
+      catch
+      {
         print(error)
       }
     }
@@ -228,22 +254,21 @@ extension ViewController {
       var probabilities = Array<Int>()
       var breeds = Array<String>()
       
-      for res in results!{
+      for res in results!
+      {
         var breed = res.identifier as String
         breed = String(breed.dropFirst(10))
         breed = breed.replacingOccurrences(of: "_", with: " ")
         let probability = Int(res.confidence*100)
-        outputText += "\(breed.capitalized): \(probability)%\n"
         if (probability > 0)
         {
             breeds.append(breed.capitalized)
             probabilities.append(probability)
+            outputText += "\(breed.capitalized): \(probability)%\n"
         }
       }
-      self!.userBreeds = breeds
-      self!.userProbabilities = probabilities
-      print(breeds)
-      print(probabilities)
+      print("Breeds: \(breeds)")
+      print("Probabilities \(probabilities)")
       self!.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
       DispatchQueue.main.async { [weak self] in
         self?.resultsText.text! = outputText
@@ -253,9 +278,12 @@ extension ViewController {
     // Run the classifier on global dispatch queue
     let handler = VNImageRequestHandler(ciImage: image)
     DispatchQueue.global(qos: .userInteractive).async {
-      do {
+      do
+      {
         try handler.perform([request])
-      } catch {
+      }
+      catch
+      {
         print(error)
       }
     }
@@ -275,16 +303,16 @@ extension ViewController {
       var outputText = ""
       var breeds = Array<String>()
       var probabilities = Array<Int>()
-      for res in results!{
-        outputText += "\(res.identifier): \(Int(res.confidence * 100))%\n"
-        if (Int(res.confidence*100) > 0)
+      for res in results!
+      {
+        let probability = Int(res.confidence*100)
+        if (probability > 0)
         {
+            outputText += "\(res.identifier): \(Int(res.confidence * 100))%\n"
             breeds.append(res.identifier as String)
-            probabilities.append(Int(res.confidence*100))
+            probabilities.append(probability)
         }
       }
-      self!.userBreeds = breeds
-      self!.userProbabilities = probabilities
       self!.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
       DispatchQueue.main.async { [weak self] in
         self?.resultsText.text! = outputText
@@ -293,10 +321,14 @@ extension ViewController {
     
     // Run the classifier on global dispatch queue
     let handler = VNImageRequestHandler(ciImage: image)
-    DispatchQueue.global(qos: .userInteractive).async {
-      do {
+    DispatchQueue.global(qos: .userInteractive).async
+    {
+      do
+      {
         try handler.perform([request])
-      } catch {
+      }
+      catch
+      {
         print(error)
       }
     }
@@ -304,11 +336,13 @@ extension ViewController {
 }
 
 // MARK: - Image Picker
-extension ViewController: UIImagePickerControllerDelegate {
+extension ViewController: UIImagePickerControllerDelegate
+{
 
-  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
+  {
+    // Local variable inserted by Swift 4.2 migrator.
+    let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
     dismiss(animated: true)
 
@@ -328,7 +362,8 @@ extension ViewController: UINavigationControllerDelegate {
 }
 
 // Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any]
+{
     return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }
 
@@ -337,23 +372,43 @@ fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePicke
     return input.rawValue
 }
 // MARK: - Table View Code
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell") as! PhotoCell
-        let data = similarPetsSpecial[indexPath.row].0 as! [String : Any]
-        let url = data["Link"] as! String
-        if let realData = try? Data(contentsOf: NSURL(string: url) {
-            if let image = UIImage(data: realData) {
-                DispatchQueue.main.async {
-                    cell.setPhoto(image)
-                }
+extension ViewController: UITableViewDataSource, UITableViewDelegate
+{
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        if (userSimilarPets.count == 0)
+        {
+            return PhotoCell()
+        }
+        else if (userSimilarPets.count <= indexPath.row)
+        {
+            return PhotoCell()
+        }
+        let cell = PhotoCell()
+        let urlString = userSimilarPets[indexPath.row].0
+        print("Here's the url string: \(urlString)")
+        if let realData = try? Data(contentsOf: NSURL(string: urlString)! as URL)
+        {
+            if let image = UIImage(data: realData)
+            {
+                cell.setPhoto(image: image)
+                /*DispatchQueue.main.async
+                {
+                    cell.setPhoto(image: image)
+                }*/
             }
         }
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        similarPetsSpecial.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        if (userSimilarPets.count == 0)
+        {
+            return badCount
+        }
+        else
+        {
+            return userSimilarPets.count
+        }
     }
-    
 }
