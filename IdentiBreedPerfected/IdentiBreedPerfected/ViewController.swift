@@ -113,9 +113,7 @@ extension ViewController
                 else
                 {
                     print("Successfull firebase query!")
-                    var indexer = 0
                     var similarPets = [(String, Int)]()
-                    print("made it")
                     print("# of documents: \(querySnapshot!.documents.count)")
                     for document in querySnapshot!.documents
                     {
@@ -123,6 +121,7 @@ extension ViewController
                         let probabilities = document.data()["Probabilities"] as! [Int]
                         var similarityScore = 0
                         print("# of breeds: \(breeds.count)")
+                        var indexer = 0
                         for breed in breeds
                         {
                             if (userBreeds.contains(breed))
@@ -141,13 +140,13 @@ extension ViewController
                                     similarityScore += 1
                                 }
                             }
+                            indexer += 1
                         }
                         if similarityScore > 0
                         {
                             let temp = (document.data()["Link"] as! String, similarityScore)
                             similarPets.append(temp)
                         }
-                        indexer += 1
                     }
                     let sortedSimilarPets = similarPets.sorted {
                         $0.1 > $1.1
