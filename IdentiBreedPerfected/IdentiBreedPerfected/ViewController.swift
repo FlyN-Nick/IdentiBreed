@@ -13,8 +13,8 @@ class ViewController: UIViewController
   @IBOutlet weak var similarPetsView: UITableView!
     
   var badCount = 0
-    
-  var userSimilarPets = [(String, Int)]()
+  var userSimilarPets = [(QueryDocumentSnapshot, Int)]()
+  var userLink = String()
   
   // MARK: - View Did Load
   override func viewDidLoad()
@@ -22,6 +22,7 @@ class ViewController: UIViewController
     super.viewDidLoad()
     similarPetsView.delegate = self
     similarPetsView.dataSource = self
+    self.resultsText.textAlignment = .center
     let db = Firestore.firestore()
     db.collection("imageInfos")
         .getDocuments() { (querySnapshot, err) in
@@ -113,20 +114,17 @@ extension ViewController
                 else
                 {
                     print("Successfull firebase query!")
-                    var similarPets = [(String, Int)]()
-                    print("# of documents: \(querySnapshot!.documents.count)")
+                    var similarPets = [(QueryDocumentSnapshot, Int)]()
                     for document in querySnapshot!.documents
                     {
                         let breeds = document.data()["Breeds"] as! [String]
                         let probabilities = document.data()["Probabilities"] as! [Int]
                         var similarityScore = 0
-                        print("# of breeds: \(breeds.count)")
                         var indexer = 0
                         for breed in breeds
                         {
                             if (userBreeds.contains(breed))
                             {
-                                print("userProbs.count: \(userProbabilities.count), userIndex: \(userBreeds.firstIndex(of: breed)!), probabilities.count: \(probabilities.count), indexer: \(indexer)")
                                 if (userProbabilities[userBreeds.firstIndex(of: breed)!] > probabilities[indexer])
                                 {
                                     similarityScore += (probabilities[indexer]/userProbabilities[userBreeds.firstIndex(of: breed)!])
@@ -142,9 +140,13 @@ extension ViewController
                             }
                             indexer += 1
                         }
+                        if (document.data()["Link"] as! String == self.userLink)
+                        {
+                            similarityScore = 0
+                        }
                         if similarityScore > 0
                         {
-                            let temp = (document.data()["Link"] as! String, similarityScore)
+                            let temp = (document, similarityScore)
                             similarPets.append(temp)
                         }
                     }
@@ -152,7 +154,6 @@ extension ViewController
                         $0.1 > $1.1
                     }
                     self.userSimilarPets = sortedSimilarPets
-                    print("SimilarPets: \(self.userSimilarPets)")
                     self.similarPetsView.reloadData()
                 }
         }
@@ -160,20 +161,22 @@ extension ViewController
   // MARK: - Firebase Upload
   func uploadPetImage(_ image: UIImage, breeds: [String], probabilities: [Int])
   {
-      let uid = UUID().uuidString
-      let imageRef = Storage.storage().reference().child("images/\(uid)")
-      
+    print("Attempting to upload image")
+    let uid = UUID().uuidString
+    let imageRef = Storage.storage().reference().child("images/\(uid)")
     guard let imageData = image.jpegData(compressionQuality: 1.0) else { return }
       let metadata = StorageMetadata()
       metadata.contentType = "image/jpeg"
       imageRef.putData(imageData, metadata: metadata) { metaData, error in
           if error != nil
           {
+              print("Error while uploading image: \(String(describing: error))")
               return
           }
           imageRef.downloadURL { (url, error) in
             if error != nil
             {
+                print("Error while downloading image url: \(String(describing: error))")
                 return
             }
             guard let url = url else {
@@ -186,15 +189,17 @@ extension ViewController
               "Probabilities": probabilities,
               "Link": urlString
               ] as [String : Any]
-            print("url: \(urlString), data: \(data)")
+            print("Url: \(urlString), data: \(data)")
             dataReference.setData(data, completion: {(err) in
               if err != nil
               {
+                print("Error while uploading image data: \(String(describing: error))")
                 return
               }
               else
               {
                 print("Image and data successfully uploaded!")
+                self.userLink = urlString
                 self.comparePet(userBreeds: breeds, userProbabilities: probabilities)
               }
             })
@@ -205,16 +210,14 @@ extension ViewController
   func classifyAnimal(image: UIImage, imageTwo: CIImage)
   {
     resultsText.text = "Analyzing your pet..."
-    
-    // Load the ML model through its generated class
     guard let model = try? VNCoreMLModel(for: DogsVsCats().model) else {
-      fatalError("Could not load Dog Classifier model...")
+      fatalError("Could not load Animal Classifier model...")
     }
     
-    // Create a Vision request with completion handler
     let request = VNCoreMLRequest(model: model) { [weak self] request, error in
       let results = request.results as? [VNClassificationObservation]
-        if (results![0].identifier == "Cats")
+        print("Identifier: \(results![0].identifier), probability: \(results![0].confidence)")
+        if (results![0].identifier == "cats")
         {
             self!.classifyCatType(image: imageTwo, uiimage: image)
         }
@@ -240,19 +243,16 @@ extension ViewController
   // MARK: - Classify Dog
   func classifyDogBreed(image: CIImage, uiimage: UIImage)
   {
-    // Load the ML model through its generated class
     guard let model = try? VNCoreMLModel(for: DogClassifier().model) else {
       fatalError("Could not load Dog Classifier model...")
     }
-    
-    // Create a Vision request with completion handler
-    let request = VNCoreMLRequest(model: model) { [weak self] request, error in
+      let request = VNCoreMLRequest(model: model) { [weak self] request, error in
       let results = request.results as? [VNClassificationObservation]
 
       var outputText = ""
       var probabilities = Array<Int>()
       var breeds = Array<String>()
-      
+      var indexer = 0
       for res in results!
       {
         var breed = res.identifier as String
@@ -263,18 +263,27 @@ extension ViewController
         {
             breeds.append(breed.capitalized)
             probabilities.append(probability)
-            outputText += "\(breed.capitalized): \(probability)%\n"
+            if (indexer == 4)
+            {
+                outputText += "\(breed.capitalized): \(probability)%"
+                indexer += 1
+            }
+            else if (indexer < 5)
+            {
+                outputText += "\(breed.capitalized): \(probability)%\n"
+                indexer += 1
+            }
         }
       }
       print("Breeds: \(breeds)")
-      print("Probabilities \(probabilities)")
+      print("Probabilities: \(probabilities)")
       self!.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
       DispatchQueue.main.async { [weak self] in
         self?.resultsText.text! = outputText
+        self?.resultsText.textAlignment = .left
       }
     }
     
-    // Run the classifier on global dispatch queue
     let handler = VNImageRequestHandler(ciImage: image)
     DispatchQueue.global(qos: .userInteractive).async {
       do
@@ -290,35 +299,42 @@ extension ViewController
   // MARK: - Classify Cat
   func classifyCatType(image: CIImage, uiimage: UIImage)
   {
-    // Load the ML model through its generated class
     guard let model = try? VNCoreMLModel(for: CatClassifierFixed().model) else {
-      fatalError("Could not load Dog Classifier model...")
+      fatalError("Could not load Cat Classifier model...")
     }
-    
-    // Create a Vision request with completion handler
-    let request = VNCoreMLRequest(model: model) { [weak self] request, error in
+      let request = VNCoreMLRequest(model: model) { [weak self] request, error in
       let results = request.results as? [VNClassificationObservation]
 
       var outputText = ""
       var breeds = Array<String>()
       var probabilities = Array<Int>()
+      var counter = 0
       for res in results!
       {
         let probability = Int(res.confidence*100)
         if (probability > 0)
         {
-            outputText += "\(res.identifier): \(Int(res.confidence * 100))%\n"
             breeds.append(res.identifier as String)
             probabilities.append(probability)
+            if (counter == 4)
+            {
+                outputText += "\(res.identifier): \(Int(res.confidence * 100))%"
+                counter += 1
+            }
+            else if (counter < 5)
+            {
+                outputText += "\(res.identifier): \(Int(res.confidence * 100))%\n"
+                counter += 1
+            }
         }
       }
       self!.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
       DispatchQueue.main.async { [weak self] in
         self?.resultsText.text! = outputText
+        self?.resultsText.textAlignment = .left
       }
     }
     
-    // Run the classifier on global dispatch queue
     let handler = VNImageRequestHandler(ciImage: image)
     DispatchQueue.global(qos: .userInteractive).async
     {
@@ -375,7 +391,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        if (userSimilarPets.count == 0)
+        /*if (indexPath.row == 0)
+        {
+            let cell = PhotoCell()
+            cell.textLabel!.text = "Similar Pets"
+            return PhotoCell()
+        }
+        else */if (userSimilarPets.count == 0)
         {
             return PhotoCell()
         }
@@ -384,17 +406,35 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate
             return PhotoCell()
         }
         let cell = PhotoCell()
-        let urlString = userSimilarPets[indexPath.row].0
-        print("Here's the url string: \(urlString)")
+        let urlString = userSimilarPets[indexPath.row/*-1*/].0.data()["Link"] as! String
         if let realData = try? Data(contentsOf: NSURL(string: urlString)! as URL)
         {
             if let image = UIImage(data: realData)
             {
-                cell.setPhoto(image: image)
-                /*DispatchQueue.main.async
+                cell.imageView!.image = image
+                cell.imageView!.contentMode = .scaleAspectFit
+                var infoText = "Similarity: \(userSimilarPets[indexPath.row/*-1*/].1)\n"
+                let probabilitiesInfo = userSimilarPets[indexPath.row/*-1*/].0.data()["Probabilities"] as! [Int]
+                let breedsInfo = userSimilarPets[indexPath.row/*-1*/].0.data()["Breeds"] as! [String]
+                var counter = 0
+                for probability in probabilitiesInfo
                 {
-                    cell.setPhoto(image: image)
-                }*/
+                    if (counter == 4)
+                    {
+                        infoText += "\(breedsInfo[counter]): \(probability)%"
+                        counter += 1
+                    }
+                    else if (counter < 5)
+                    {
+                        infoText += "\(breedsInfo[counter]): \(probability)%\n"
+                        counter += 1
+                    }
+                }
+                cell.textLabel!.text = infoText
+                cell.textLabel!.textAlignment = .left
+                cell.textLabel!.font = UIFont.preferredFont(forTextStyle: .body)
+                cell.textLabel!.numberOfLines = 6
+                cell.textLabel!.font = cell.textLabel!.font.withSize(13)
             }
         }
         return cell
@@ -407,7 +447,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate
         }
         else
         {
-            return userSimilarPets.count
+            return (userSimilarPets.count/*+1*/)
         }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 150
     }
 }

@@ -12,9 +12,5 @@ import Foundation
 class PhotoCell: UITableViewCell
 {
     @IBOutlet weak var petImage: UIImageView!
-    func setPhoto(image: UIImage)
-    {
-        print(image)
-        petImage.image = image
-    }
+    
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01796BBE244509EA00950425 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01796BBD244509EA00950425 /* GoogleService-Info.plist */; };
+		0115562024466D3C009F7F9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0115561F24466D3C009F7F9E /* GoogleService-Info.plist */; };
 		01796BC024451A5000950425 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01796BBF24451A5000950425 /* PhotoCell.swift */; };
 		01925B162445037600124B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01925B152445037600124B06 /* AppDelegate.swift */; };
 		01925B182445037600124B06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01925B172445037600124B06 /* SceneDelegate.swift */; };
@@ -58,7 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01796BBD244509EA00950425 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0115561F24466D3C009F7F9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		01796BBF24451A5000950425 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		01925B122445037600124B06 /* IdentiBreedPerfected.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdentiBreedPerfected.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01925B152445037600124B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,8 +177,8 @@
 				01925B652445040800124B06 /* CatClassifierFixed.mlmodel */,
 				01925B672445040800124B06 /* DogClassifier.mlmodel */,
 				01925B662445040800124B06 /* DogsVsCats.mlmodel */,
-				01796BBD244509EA00950425 /* GoogleService-Info.plist */,
 				01796BBF24451A5000950425 /* PhotoCell.swift */,
+				0115561F24466D3C009F7F9E /* GoogleService-Info.plist */,
 			);
 			path = IdentiBreedPerfected;
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 				01925B582445039E00124B06 /* 29.png in Resources */,
 				01925B5B2445039E00124B06 /* 120.png in Resources */,
 				01925B5C2445039E00124B06 /* 1024.png in Resources */,
-				01796BBE244509EA00950425 /* GoogleService-Info.plist in Resources */,
+				0115562024466D3C009F7F9E /* GoogleService-Info.plist in Resources */,
 				01925B1D2445037600124B06 /* Main.storyboard in Resources */,
 				01925B512445039E00124B06 /* 20.png in Resources */,
 			);
@@ -598,6 +598,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreedPerfected;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -617,6 +618,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Liege.IdentiBreedPerfected;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
