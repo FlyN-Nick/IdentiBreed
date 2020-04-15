@@ -267,6 +267,7 @@ extension ViewController
         var breed = res.identifier as String
         breed = String(breed.dropFirst(10))
         breed = breed.replacingOccurrences(of: "_", with: " ")
+        breed = breed.replacingOccurrences(of: "-", with: " ")
         let probability = Int(res.confidence*100)
         if (probability > 0)
         {
