@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0115562024466D3C009F7F9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0115561F24466D3C009F7F9E /* GoogleService-Info.plist */; };
+		01502AEC2446B1940063F6A3 /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01502AEB2446B1940063F6A3 /* Second.storyboard */; };
+		01502AEE2446B63A0063F6A3 /* BreedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01502AED2446B63A0063F6A3 /* BreedCell.swift */; };
+		01502AF02446B6830063F6A3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01502AEF2446B6830063F6A3 /* SecondViewController.swift */; };
 		01796BC024451A5000950425 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01796BBF24451A5000950425 /* PhotoCell.swift */; };
 		01925B162445037600124B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01925B152445037600124B06 /* AppDelegate.swift */; };
 		01925B182445037600124B06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01925B172445037600124B06 /* SceneDelegate.swift */; };
@@ -59,6 +62,9 @@
 
 /* Begin PBXFileReference section */
 		0115561F24466D3C009F7F9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01502AEB2446B1940063F6A3 /* Second.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
+		01502AED2446B63A0063F6A3 /* BreedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCell.swift; sourceTree = "<group>"; };
+		01502AEF2446B6830063F6A3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		01796BBF24451A5000950425 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		01925B122445037600124B06 /* IdentiBreedPerfected.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdentiBreedPerfected.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01925B152445037600124B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				01925B152445037600124B06 /* AppDelegate.swift */,
+				01502AEF2446B6830063F6A3 /* SecondViewController.swift */,
+				01502AEB2446B1940063F6A3 /* Second.storyboard */,
 				01925B172445037600124B06 /* SceneDelegate.swift */,
 				01925B192445037600124B06 /* ViewController.swift */,
 				01925B1B2445037600124B06 /* Main.storyboard */,
@@ -179,6 +187,7 @@
 				01925B662445040800124B06 /* DogsVsCats.mlmodel */,
 				01796BBF24451A5000950425 /* PhotoCell.swift */,
 				0115561F24466D3C009F7F9E /* GoogleService-Info.plist */,
+				01502AED2446B63A0063F6A3 /* BreedCell.swift */,
 			);
 			path = IdentiBreedPerfected;
 			sourceTree = "<group>";
@@ -330,6 +339,7 @@
 				01925B5A2445039E00124B06 /* 180.png in Resources */,
 				01925B542445039E00124B06 /* 80.png in Resources */,
 				01925B522445039E00124B06 /* 87.png in Resources */,
+				01502AEC2446B1940063F6A3 /* Second.storyboard in Resources */,
 				01925B562445039E00124B06 /* 58.png in Resources */,
 				01925B572445039E00124B06 /* 60.png in Resources */,
 				01925B60244503B500124B06 /* 76.png in Resources */,
@@ -410,6 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01502AEE2446B63A0063F6A3 /* BreedCell.swift in Sources */,
 				01925B1A2445037600124B06 /* ViewController.swift in Sources */,
 				01925B6A2445040800124B06 /* DogsVsCats.mlmodel in Sources */,
 				01925B6B2445040800124B06 /* DogClassifier.mlmodel in Sources */,
@@ -417,6 +428,7 @@
 				01796BC024451A5000950425 /* PhotoCell.swift in Sources */,
 				01925B162445037600124B06 /* AppDelegate.swift in Sources */,
 				01925B182445037600124B06 /* SceneDelegate.swift in Sources */,
+				01502AF02446B6830063F6A3 /* SecondViewController.swift in Sources */,
 				01925B692445040800124B06 /* CatClassifierFixed.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

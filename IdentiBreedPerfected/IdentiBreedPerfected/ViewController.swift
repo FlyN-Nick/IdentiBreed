@@ -9,21 +9,24 @@ class ViewController: UIViewController
 
   // MARK: - IBOutlets
   @IBOutlet weak var petImage: UIImageView!
-  @IBOutlet weak var resultsText: UILabel!
-  @IBOutlet weak var similarPetsView: UITableView!
+  //@IBOutlet weak var resultsTable: UITableView!
+  @IBOutlet weak var LoadingIndicator: UIActivityIndicatorView!
     
   var badCount = 0
   var userSimilarPets = [(QueryDocumentSnapshot, Int)]()
   var userLink = String()
+  var results = [String]()
   
   // MARK: - View Did Load
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    similarPetsView.delegate = self
-    similarPetsView.dataSource = self
-    self.resultsText.textAlignment = .center
     let db = Firestore.firestore()
+    //resultsTable.dataSource = self
+    //resultsTable.delegate = self
+    LoadingIndicator.isOpaque = false
+    LoadingIndicator.isHidden = true
+    LoadingIndicator.stopAnimating()
     db.collection("imageInfos")
         .getDocuments() { (querySnapshot, err) in
             if let err = err
@@ -35,15 +38,6 @@ class ViewController: UIViewController
                 self.badCount = querySnapshot!.documents.count
             }
     }
-    //petImage.translatesAutoresizingMaskIntoConstraints = false;
-    /*let captureSession = AVCaptureSession()
-    guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
-    guard let input =  try? AVCaptureDeviceInput(device: captureDevice) else { return }
-    captureSession.addInput(input)
-    captureSession.startRunning()
-    let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-    view.layer.addSublayer(previewLayer)
-    previewLayer.frame = view.frame*/
   }
 }
 
@@ -154,7 +148,11 @@ extension ViewController
                         $0.1 > $1.1
                     }
                     self.userSimilarPets = sortedSimilarPets
-                    self.similarPetsView.reloadData()
+                    let vc = SecondViewController()
+                    vc.petImageData = self.petImage.image
+                    vc.userSimilarPets = self.userSimilarPets
+                    vc.results = self.results
+                    self.present(vc, animated: true, completion: nil)
                 }
         }
     }
@@ -209,7 +207,9 @@ extension ViewController
   // MARK: - Classify Animal
   func classifyAnimal(image: UIImage, imageTwo: CIImage)
   {
-    resultsText.text = "Analyzing your pet..."
+    LoadingIndicator.isHidden = false
+    LoadingIndicator.isOpaque = true
+    LoadingIndicator.startAnimating()
     guard let model = try? VNCoreMLModel(for: DogsVsCats().model) else {
       fatalError("Could not load Animal Classifier model...")
     }
@@ -249,10 +249,9 @@ extension ViewController
       let request = VNCoreMLRequest(model: model) { [weak self] request, error in
       let results = request.results as? [VNClassificationObservation]
 
-      var outputText = ""
+      var outputTextArr = [String]()
       var probabilities = Array<Int>()
       var breeds = Array<String>()
-      var indexer = 0
       for res in results!
       {
         var breed = res.identifier as String
@@ -263,25 +262,17 @@ extension ViewController
         {
             breeds.append(breed.capitalized)
             probabilities.append(probability)
-            if (indexer == 4)
-            {
-                outputText += "\(breed.capitalized): \(probability)%"
-                indexer += 1
-            }
-            else if (indexer < 5)
-            {
-                outputText += "\(breed.capitalized): \(probability)%\n"
-                indexer += 1
-            }
+            outputTextArr.append("\(breed.capitalized): \(probability)%")
         }
       }
       print("Breeds: \(breeds)")
       print("Probabilities: \(probabilities)")
+      self!.results = outputTextArr
+      //self!.LoadingIndicator.stopAnimating()
+      //self!.LoadingIndicator.isHidden = true
+      //self!.LoadingIndicator.isOpaque = false
+      //self!.resultsTable.reloadData()
       self!.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
-      DispatchQueue.main.async { [weak self] in
-        self?.resultsText.text! = outputText
-        self?.resultsText.textAlignment = .left
-      }
     }
     
     let handler = VNImageRequestHandler(ciImage: image)
@@ -305,10 +296,9 @@ extension ViewController
       let request = VNCoreMLRequest(model: model) { [weak self] request, error in
       let results = request.results as? [VNClassificationObservation]
 
-      var outputText = ""
+      var outputTextArr = [String]()
       var breeds = Array<String>()
       var probabilities = Array<Int>()
-      var counter = 0
       for res in results!
       {
         let probability = Int(res.confidence*100)
@@ -316,23 +306,15 @@ extension ViewController
         {
             breeds.append(res.identifier as String)
             probabilities.append(probability)
-            if (counter == 4)
-            {
-                outputText += "\(res.identifier): \(Int(res.confidence * 100))%"
-                counter += 1
-            }
-            else if (counter < 5)
-            {
-                outputText += "\(res.identifier): \(Int(res.confidence * 100))%\n"
-                counter += 1
-            }
+            outputTextArr.append("\(res.identifier): \(Int(res.confidence * 100))%")
         }
       }
+      self!.results = outputTextArr
+      //self!.LoadingIndicator.stopAnimating()
+      //self!.LoadingIndicator.isHidden = true
+      //self!.LoadingIndicator.isOpaque = false
+      //self!.resultsTable.reloadData()
       self!.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
-      DispatchQueue.main.async { [weak self] in
-        self?.resultsText.text! = outputText
-        self?.resultsText.textAlignment = .left
-      }
     }
     
     let handler = VNImageRequestHandler(ciImage: image)
@@ -386,72 +368,29 @@ fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [U
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
     return input.rawValue
 }
-// MARK: - Table View Code
-extension ViewController: UITableViewDataSource, UITableViewDelegate
+
+/*extension ViewController: UITableViewDataSource, UITableViewDelegate
 {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        /*if (indexPath.row == 0)
-        {
-            let cell = PhotoCell()
-            cell.textLabel!.text = "Similar Pets"
-            return PhotoCell()
-        }
-        else */if (userSimilarPets.count == 0)
-        {
-            return PhotoCell()
-        }
-        else if (userSimilarPets.count <= indexPath.row)
-        {
-            return PhotoCell()
-        }
-        let cell = PhotoCell()
-        let urlString = userSimilarPets[indexPath.row/*-1*/].0.data()["Link"] as! String
-        if let realData = try? Data(contentsOf: NSURL(string: urlString)! as URL)
-        {
-            if let image = UIImage(data: realData)
-            {
-                cell.imageView!.image = image
-                cell.imageView!.contentMode = .scaleAspectFit
-                var infoText = "Similarity: \(userSimilarPets[indexPath.row/*-1*/].1)\n"
-                let probabilitiesInfo = userSimilarPets[indexPath.row/*-1*/].0.data()["Probabilities"] as! [Int]
-                let breedsInfo = userSimilarPets[indexPath.row/*-1*/].0.data()["Breeds"] as! [String]
-                var counter = 0
-                for probability in probabilitiesInfo
-                {
-                    if (counter == 4)
-                    {
-                        infoText += "\(breedsInfo[counter]): \(probability)%"
-                        counter += 1
-                    }
-                    else if (counter < 5)
-                    {
-                        infoText += "\(breedsInfo[counter]): \(probability)%\n"
-                        counter += 1
-                    }
-                }
-                cell.textLabel!.text = infoText
-                cell.textLabel!.textAlignment = .left
-                cell.textLabel!.font = UIFont.preferredFont(forTextStyle: .body)
-                cell.textLabel!.numberOfLines = 6
-                cell.textLabel!.font = cell.textLabel!.font.withSize(13)
-            }
-        }
-        return cell
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if (userSimilarPets.count == 0)
+        if (results.count == 0)
         {
-            return badCount
+            return 121
         }
         else
         {
-            return (userSimilarPets.count/*+1*/)
+            return results.count
         }
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        return 150
+        let cell = BreedCell()
+        if (results.count == 0)
+        {
+            return BreedCell()
+        }
+        cell.textLabel!.text = results[indexPath.row]
+        return cell
     }
-}
+}*/
