@@ -13,27 +13,46 @@ import UIKit
 import Firebase
 import AVKit
 
-class SecondViewController: UIViewController
+class SecondViewController: UIViewController, ResultsHandlerDelegate
 {
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var resultsTable: UITableView!
-    @IBOutlet weak var breedInfo: UILabel!
     @IBOutlet weak var similarPets: UITableView!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var breedInfo: UILabel!
     
     public var results = [String]()
     public var userSimilarPets = [(QueryDocumentSnapshot, Int)]()
     public var petImageData: UIImage!
+    public var breedResults = [String]()
     var resultsHandler = ResultsHandler()
-    var breedLinkDictionary: [String: String] = [:]
-    
+    var breedInfoDictionary: [String: String] = [:]
+        
     override func viewDidLoad()
     {
         super.viewDidLoad()
         similarPets.delegate = self
         similarPets.dataSource = self
+        similarPets.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.25)
+        resultsHandler.results = breedResults
+        resultsHandler.delegate = self
         resultsTable.delegate = resultsHandler
         resultsTable.dataSource = resultsHandler
+        resultsTable.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.25)
         petImage.image = petImageData
+        breedInfo.text = breedInfoDictionary[breedResults[0]]
+        self.view.bringSubviewToFront(backButton)
+    }
+    @IBAction func backButton(_ sender: Any)
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    func selectBreed(_ breed: String)
+    {
+        breedInfo.text = breedInfoDictionary[breed]
     }
 }
 extension SecondViewController: UITableViewDataSource, UITableViewDelegate
@@ -78,6 +97,8 @@ extension SecondViewController: UITableViewDataSource, UITableViewDelegate
                 cell.textLabel!.font = UIFont.preferredFont(forTextStyle: .body)
                 cell.textLabel!.numberOfLines = 6
                 cell.textLabel!.font = cell.textLabel!.font.withSize(13)
+                cell.textLabel!.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+                cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
             }
         }
         return cell
@@ -91,29 +112,45 @@ extension SecondViewController: UITableViewDataSource, UITableViewDelegate
         return 150
     }
 }
+protocol ResultsHandlerDelegate: class
+{
+    func selectBreed(_ breed: String)
+}
 class ResultsHandler: UITableViewCell
 {
     public var results = [String]()
+    public var selectedBreed = ""
+    weak var delegate: ResultsHandlerDelegate?
 }
 extension ResultsHandler: UITableViewDataSource, UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        if (selectedBreed == "")
+        {
+            selectedBreed = results[0]
+        }
         return results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
+        if (selectedBreed == "")
+        {
+            selectedBreed = results[0]
+        }
         let cell = BreedCell()
         cell.textLabel!.text = results[indexPath.row]
         cell.textLabel!.numberOfLines = 1
         cell.textLabel!.textAlignment = .center
+        cell.textLabel!.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        //let selectedBreed = results[indexPath.row]
-        //breedInfo.text = breedLinkDictionary[selectedBreed]
+        selectedBreed = results[indexPath.row]
+        delegate?.selectBreed(selectedBreed)
     }
 }
 

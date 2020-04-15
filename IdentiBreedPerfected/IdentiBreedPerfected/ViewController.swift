@@ -16,14 +16,14 @@ class ViewController: UIViewController
   var userSimilarPets = [(QueryDocumentSnapshot, Int)]()
   var userLink = String()
   var results = [String]()
+  var breedResults = [String]()
   
   // MARK: - View Did Load
   override func viewDidLoad()
   {
     super.viewDidLoad()
     let db = Firestore.firestore()
-    //resultsTable.dataSource = self
-    //resultsTable.delegate = self
+    petImage.startAnimating()
     LoadingIndicator.isOpaque = false
     LoadingIndicator.isHidden = true
     LoadingIndicator.stopAnimating()
@@ -119,17 +119,24 @@ extension ViewController
                         {
                             if (userBreeds.contains(breed))
                             {
-                                if (userProbabilities[userBreeds.firstIndex(of: breed)!] > probabilities[indexer])
+                                let userIndex = userBreeds.firstIndex(of: breed)!
+                                if (userProbabilities[userIndex] > probabilities[indexer])
                                 {
-                                    similarityScore += (probabilities[indexer]/userProbabilities[userBreeds.firstIndex(of: breed)!])
+                                    let score = (probabilities[indexer]/userProbabilities[userIndex])
+                                    let gravity = (probabilities[indexer]+userProbabilities[userIndex])/2
+                                    similarityScore += score*gravity
                                 }
                                 else if (userProbabilities[userBreeds.firstIndex(of: breed)!] < probabilities[indexer])
                                 {
-                                    similarityScore += (userProbabilities[userBreeds.firstIndex(of: breed)!]/probabilities[indexer])
+                                    let score = (userProbabilities[userIndex]/probabilities[indexer])
+                                    let gravity = (probabilities[indexer]+userProbabilities[userIndex])/2
+                                    similarityScore += score*gravity
                                 }
                                 else
                                 {
-                                    similarityScore += 1
+                                    let score = 1
+                                    let gravity = probabilities[indexer]
+                                    similarityScore += score*gravity
                                 }
                             }
                             indexer += 1
@@ -148,10 +155,13 @@ extension ViewController
                         $0.1 > $1.1
                     }
                     self.userSimilarPets = sortedSimilarPets
-                    let vc = SecondViewController()
+                    let storyboard = UIStoryboard(name: "Second", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
                     vc.petImageData = self.petImage.image
                     vc.userSimilarPets = self.userSimilarPets
                     vc.results = self.results
+                    vc.breedResults = self.breedResults
+                    vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
                 }
         }
@@ -268,10 +278,7 @@ extension ViewController
       print("Breeds: \(breeds)")
       print("Probabilities: \(probabilities)")
       self!.results = outputTextArr
-      //self!.LoadingIndicator.stopAnimating()
-      //self!.LoadingIndicator.isHidden = true
-      //self!.LoadingIndicator.isOpaque = false
-      //self!.resultsTable.reloadData()
+      self!.breedResults = breeds
       self!.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
     }
     
@@ -310,10 +317,7 @@ extension ViewController
         }
       }
       self!.results = outputTextArr
-      //self!.LoadingIndicator.stopAnimating()
-      //self!.LoadingIndicator.isHidden = true
-      //self!.LoadingIndicator.isOpaque = false
-      //self!.resultsTable.reloadData()
+      self!.breedResults = breeds
       self!.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
     }
     
@@ -346,6 +350,7 @@ extension ViewController: UIImagePickerControllerDelegate
     guard let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage else {
       fatalError("Could not properly upload image...")
     }
+    petImage.stopAnimating()
     petImage.image = image
     guard let ciImage = CIImage(image: image) else {
       fatalError("Could not convert UIImage to CIImage...")
@@ -369,28 +374,3 @@ fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePicke
     return input.rawValue
 }
 
-/*extension ViewController: UITableViewDataSource, UITableViewDelegate
-{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        if (results.count == 0)
-        {
-            return 121
-        }
-        else
-        {
-            return results.count
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        let cell = BreedCell()
-        if (results.count == 0)
-        {
-            return BreedCell()
-        }
-        cell.textLabel!.text = results[indexPath.row]
-        return cell
-    }
-}*/
