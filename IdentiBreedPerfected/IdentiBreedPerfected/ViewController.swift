@@ -5,6 +5,7 @@ import Firebase
 import AVKit
 import CoreTelephony
 import SystemConfiguration
+import GoogleMobileAds
 
 class ViewController: UIViewController
 {
@@ -13,6 +14,7 @@ class ViewController: UIViewController
   @IBOutlet weak var petImage: UIImageView!
   //@IBOutlet weak var resultsTable: UITableView!
   @IBOutlet weak var LoadingIndicator: UIActivityIndicatorView!
+  @IBOutlet weak var googleAd: GADBannerView!
     
   var userSimilarPets = [(QueryDocumentSnapshot, Int)]()
   var userLink = String()
@@ -28,6 +30,10 @@ class ViewController: UIViewController
     LoadingIndicator.isOpaque = false
     LoadingIndicator.isHidden = true
     LoadingIndicator.stopAnimating()
+    googleAd.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+    googleAd.rootViewController = self
+    googleAd.load(GADRequest())
+    googleAd.delegate = self
   }
 }
 
@@ -83,8 +89,16 @@ extension ViewController
     }
 }
 
-extension ViewController
+extension ViewController: GADBannerViewDelegate
 {
+    // MARK: - Gives ad an animation
+    func adViewDidReceiveAd(_ bannerView: GADBannerView)
+    {
+      googleAd.alpha = 0
+      UIView.animate(withDuration: 1, animations: {
+        bannerView.alpha = 1
+      })
+    }
     // MARK: - Checks if user has an internet connection
     private func checkReachable()
     {
@@ -149,9 +163,7 @@ extension ViewController
                                 }
                                 else
                                 {
-                                    let score = 1
-                                    let gravity = probabilities[indexer]
-                                    similarityScore += score*gravity
+                                    similarityScore += probabilities[indexer]
                                 }
                             }
                             indexer += 1
@@ -172,7 +184,7 @@ extension ViewController
                         let document = pet.0
                         if (document.data()["Link"] as! String != self.userLink)
                         {
-                            similarPetsProbabilities.append((document, (pet.1/maxSimilarityScore)))
+                            similarPetsProbabilities.append((document, ((pet.1*100)/maxSimilarityScore)))
                         }
                     }
                     let sortedSimilarPets = similarPetsProbabilities.sorted {
@@ -206,6 +218,7 @@ extension ViewController
               print("Error while uploading image: \(String(describing: error))")
               let alert = UIAlertController(title: "Something Went Wrong", message: "An error occured while uploading to the database.", preferredStyle: .alert)
               alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+              self.present(alert, animated: true, completion: nil)
               return
           }
           imageRef.downloadURL { (url, error) in
@@ -214,6 +227,7 @@ extension ViewController
                 print("Error while downloading image url: \(String(describing: error))")
                 let alert = UIAlertController(title: "Something Went Wrong", message: "An error occured while querying to the database.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
                 return
             }
             guard let url = url else {
@@ -233,6 +247,7 @@ extension ViewController
                 print("Error while uploading image data: \(String(describing: error))")
                 let alert = UIAlertController(title: "Something Went Wrong", message: "An error occured while uploading to the database.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
                 return
               }
               else
@@ -254,6 +269,7 @@ extension ViewController
     guard let model = try? VNCoreMLModel(for: DogsVsCats().model) else {
       let alert = UIAlertController(title: "Something Went Wrong", message: "An error while loading machine learning model.", preferredStyle: .alert)
       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+      self.present(alert, animated: true, completion: nil)
       fatalError("Could not load Animal Classifier model...")
     }
     
@@ -262,11 +278,11 @@ extension ViewController
         print("Identifier: \(results![0].identifier), probability: \(results![0].confidence)")
         if (results![0].identifier == "cats")
         {
-            self!.classifyCatType(image: imageTwo, uiimage: image)
+            self?.classifyCatType(image: imageTwo, uiimage: image)
         }
         else
         {
-            self!.classifyDogBreed(image: imageTwo, uiimage: image)
+            self?.classifyDogBreed(image: imageTwo, uiimage: image)
         }
     }
     
@@ -289,6 +305,7 @@ extension ViewController
     guard let model = try? VNCoreMLModel(for: DogClassifier().model) else {
       let alert = UIAlertController(title: "Something Went Wrong", message: "An error while loading machine learning model.", preferredStyle: .alert)
       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+      self.present(alert, animated: true, completion: nil)
       fatalError("Could not load Dog Classifier model...")
     }
       let request = VNCoreMLRequest(model: model) { [weak self] request, error in
@@ -313,9 +330,9 @@ extension ViewController
       }
       print("Breeds: \(breeds)")
       print("Probabilities: \(probabilities)")
-      self!.results = outputTextArr
-      self!.breedResults = breeds
-      self!.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
+      self?.results = outputTextArr
+      self?.breedResults = breeds
+      self?.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
     }
     
     let handler = VNImageRequestHandler(ciImage: image)
@@ -336,6 +353,7 @@ extension ViewController
     guard let model = try? VNCoreMLModel(for: CatClassifierFixed().model) else {
       let alert = UIAlertController(title: "Something Went Wrong", message: "An error while loading machine learning model.", preferredStyle: .alert)
       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+      self.present(alert, animated: true, completion: nil)
       fatalError("Could not load Cat Classifier model...")
     }
       let request = VNCoreMLRequest(model: model) { [weak self] request, error in
@@ -354,9 +372,9 @@ extension ViewController
             outputTextArr.append("\(res.identifier): \(Int(res.confidence * 100))%")
         }
       }
-      self!.results = outputTextArr
-      self!.breedResults = breeds
-      self!.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
+      self?.results = outputTextArr
+      self?.breedResults = breeds
+      self?.uploadPetImage(uiimage, breeds: breeds, probabilities: probabilities)
     }
     
     let handler = VNImageRequestHandler(ciImage: image)

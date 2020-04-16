@@ -20,27 +20,28 @@
 		01925B222445037700124B06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01925B202445037700124B06 /* LaunchScreen.storyboard */; };
 		01925B2D2445037700124B06 /* IdentiBreedPerfectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01925B2C2445037700124B06 /* IdentiBreedPerfectedTests.swift */; };
 		01925B382445037700124B06 /* IdentiBreedPerfectedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01925B372445037700124B06 /* IdentiBreedPerfectedUITests.swift */; };
-		01925B512445039E00124B06 /* 20.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B452445039D00124B06 /* 20.png */; };
-		01925B522445039E00124B06 /* 87.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B462445039D00124B06 /* 87.png */; };
-		01925B532445039E00124B06 /* 167.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B472445039D00124B06 /* 167.png */; };
-		01925B542445039E00124B06 /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B482445039D00124B06 /* 80.png */; };
-		01925B552445039E00124B06 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif in Resources */ = {isa = PBXBuildFile; fileRef = 01925B492445039D00124B06 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */; };
-		01925B562445039E00124B06 /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B4A2445039E00124B06 /* 58.png */; };
-		01925B572445039E00124B06 /* 60.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B4B2445039E00124B06 /* 60.png */; };
-		01925B582445039E00124B06 /* 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B4C2445039E00124B06 /* 29.png */; };
-		01925B592445039E00124B06 /* 152.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B4D2445039E00124B06 /* 152.png */; };
-		01925B5A2445039E00124B06 /* 180.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B4E2445039E00124B06 /* 180.png */; };
-		01925B5B2445039E00124B06 /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B4F2445039E00124B06 /* 120.png */; };
-		01925B5C2445039E00124B06 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B502445039E00124B06 /* 1024.png */; };
-		01925B5F244503B500124B06 /* CameraIconFixed.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B5D244503B500124B06 /* CameraIconFixed.png */; };
-		01925B60244503B500124B06 /* 76.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B5E244503B500124B06 /* 76.png */; };
-		01925B62244503C300124B06 /* IdentiBreedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B61244503C300124B06 /* IdentiBreedLogo.png */; };
-		01925B64244503CB00124B06 /* 40.png in Resources */ = {isa = PBXBuildFile; fileRef = 01925B63244503CB00124B06 /* 40.png */; };
-		01925B692445040800124B06 /* CatClassifierFixed.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01925B652445040800124B06 /* CatClassifierFixed.mlmodel */; };
-		01925B6A2445040800124B06 /* DogsVsCats.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01925B662445040800124B06 /* DogsVsCats.mlmodel */; };
-		01925B6B2445040800124B06 /* DogClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01925B672445040800124B06 /* DogClassifier.mlmodel */; };
-		01925B6C2445040800124B06 /* CatClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01925B682445040800124B06 /* CatClassifier.mlmodel */; };
-		5B2508BE5AC6DA6FDA9AD875 /* libPods-IdentiBreedPerfected.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 656792315D5B6B7C4818F593 /* libPods-IdentiBreedPerfected.a */; };
+		01C2360D24482562004852B1 /* breeds_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 01C235F724482561004852B1 /* breeds_info.json */; };
+		01C2360E24482562004852B1 /* 152.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C235F824482561004852B1 /* 152.png */; };
+		01C2360F24482562004852B1 /* 76.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C235F924482561004852B1 /* 76.png */; };
+		01C2361024482562004852B1 /* 40.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C235FA24482561004852B1 /* 40.png */; };
+		01C2361124482562004852B1 /* CameraIconFixed.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C235FB24482561004852B1 /* CameraIconFixed.png */; };
+		01C2361224482562004852B1 /* CatClassifierFixed.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01C235FD24482561004852B1 /* CatClassifierFixed.mlmodel */; };
+		01C2361324482562004852B1 /* 180.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C235FE24482561004852B1 /* 180.png */; };
+		01C2361424482562004852B1 /* CatClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01C235FF24482561004852B1 /* CatClassifier.mlmodel */; };
+		01C2361524482562004852B1 /* 87.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C2360024482561004852B1 /* 87.png */; };
+		01C2361624482562004852B1 /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C2360124482561004852B1 /* 58.png */; };
+		01C2361724482562004852B1 /* 60.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C2360224482561004852B1 /* 60.png */; };
+		01C2361824482562004852B1 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C2360324482561004852B1 /* 1024.png */; };
+		01C2361924482562004852B1 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif in Resources */ = {isa = PBXBuildFile; fileRef = 01C2360424482561004852B1 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */; };
+		01C2361A24482562004852B1 /* IdentiBreedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C2360524482561004852B1 /* IdentiBreedLogo.png */; };
+		01C2361B24482562004852B1 /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C2360624482562004852B1 /* 80.png */; };
+		01C2361C24482562004852B1 /* DogsVsCats.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01C2360724482562004852B1 /* DogsVsCats.mlmodel */; };
+		01C2361D24482562004852B1 /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C2360824482562004852B1 /* 120.png */; };
+		01C2361E24482562004852B1 /* 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C2360924482562004852B1 /* 29.png */; };
+		01C2361F24482562004852B1 /* DogClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01C2360A24482562004852B1 /* DogClassifier.mlmodel */; };
+		01C2362024482562004852B1 /* 20.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C2360B24482562004852B1 /* 20.png */; };
+		01C2362124482562004852B1 /* 167.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C2360C24482562004852B1 /* 167.png */; };
+		B9D805A4F79862002DE7CAD4 /* libPods-IdentiBreedPerfected.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E81AA8932C53B21F9074A9 /* libPods-IdentiBreedPerfected.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,29 +81,31 @@
 		01925B332445037700124B06 /* IdentiBreedPerfectedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IdentiBreedPerfectedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01925B372445037700124B06 /* IdentiBreedPerfectedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentiBreedPerfectedUITests.swift; sourceTree = "<group>"; };
 		01925B392445037700124B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01925B452445039D00124B06 /* 20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 20.png; path = ../../IdentiBreed/AppLogoResized/20.png; sourceTree = "<group>"; };
-		01925B462445039D00124B06 /* 87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 87.png; path = ../../IdentiBreed/AppLogoResized/87.png; sourceTree = "<group>"; };
-		01925B472445039D00124B06 /* 167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 167.png; path = ../../IdentiBreed/AppLogoResized/167.png; sourceTree = "<group>"; };
-		01925B482445039D00124B06 /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 80.png; path = ../../IdentiBreed/AppLogoResized/80.png; sourceTree = "<group>"; };
-		01925B492445039D00124B06 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif"; path = "../../IdentiBreed/AppLogoResized/dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif"; sourceTree = "<group>"; };
-		01925B4A2445039E00124B06 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 58.png; path = ../../IdentiBreed/AppLogoResized/58.png; sourceTree = "<group>"; };
-		01925B4B2445039E00124B06 /* 60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 60.png; path = ../../IdentiBreed/AppLogoResized/60.png; sourceTree = "<group>"; };
-		01925B4C2445039E00124B06 /* 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 29.png; path = ../../IdentiBreed/AppLogoResized/29.png; sourceTree = "<group>"; };
-		01925B4D2445039E00124B06 /* 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 152.png; path = ../../IdentiBreed/AppLogoResized/152.png; sourceTree = "<group>"; };
-		01925B4E2445039E00124B06 /* 180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 180.png; path = ../../IdentiBreed/AppLogoResized/180.png; sourceTree = "<group>"; };
-		01925B4F2445039E00124B06 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 120.png; path = ../../IdentiBreed/AppLogoResized/120.png; sourceTree = "<group>"; };
-		01925B502445039E00124B06 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1024.png; path = ../../IdentiBreed/AppLogoResized/1024.png; sourceTree = "<group>"; };
-		01925B5D244503B500124B06 /* CameraIconFixed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CameraIconFixed.png; path = ../../IdentiBreed/AppLogoResized/CameraIconFixed.png; sourceTree = "<group>"; };
-		01925B5E244503B500124B06 /* 76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 76.png; path = ../../IdentiBreed/AppLogoResized/76.png; sourceTree = "<group>"; };
-		01925B61244503C300124B06 /* IdentiBreedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IdentiBreedLogo.png; path = ../../IdentiBreed/AppLogoResized/IdentiBreedLogo.png; sourceTree = "<group>"; };
-		01925B63244503CB00124B06 /* 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 40.png; path = ../../IdentiBreed/AppLogoResized/40.png; sourceTree = "<group>"; };
-		01925B652445040800124B06 /* CatClassifierFixed.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CatClassifierFixed.mlmodel; path = ../../IdentiBreed/IdentiBreed/CatClassifierFixed.mlmodel; sourceTree = "<group>"; };
-		01925B662445040800124B06 /* DogsVsCats.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DogsVsCats.mlmodel; path = ../../IdentiBreed/IdentiBreed/DogsVsCats.mlmodel; sourceTree = "<group>"; };
-		01925B672445040800124B06 /* DogClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DogClassifier.mlmodel; path = ../../IdentiBreed/IdentiBreed/DogClassifier.mlmodel; sourceTree = "<group>"; };
-		01925B682445040800124B06 /* CatClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CatClassifier.mlmodel; path = ../../IdentiBreed/IdentiBreed/CatClassifier.mlmodel; sourceTree = "<group>"; };
-		14B182506725382CDCF03236 /* Pods-IdentiBreedPerfected.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdentiBreedPerfected.release.xcconfig"; path = "Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected.release.xcconfig"; sourceTree = "<group>"; };
-		656792315D5B6B7C4818F593 /* libPods-IdentiBreedPerfected.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IdentiBreedPerfected.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6AC2564A47E1C6A0B2A6C62 /* Pods-IdentiBreedPerfected.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdentiBreedPerfected.debug.xcconfig"; path = "Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected.debug.xcconfig"; sourceTree = "<group>"; };
+		01C235F724482561004852B1 /* breeds_info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = breeds_info.json; path = Resources/breeds_info.json; sourceTree = "<group>"; };
+		01C235F824482561004852B1 /* 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 152.png; path = Resources/152.png; sourceTree = "<group>"; };
+		01C235F924482561004852B1 /* 76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 76.png; path = Resources/76.png; sourceTree = "<group>"; };
+		01C235FA24482561004852B1 /* 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 40.png; path = Resources/40.png; sourceTree = "<group>"; };
+		01C235FB24482561004852B1 /* CameraIconFixed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CameraIconFixed.png; path = Resources/CameraIconFixed.png; sourceTree = "<group>"; };
+		01C235FC24482561004852B1 /* CatClassifier.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = CatClassifier.playground; path = Resources/CatClassifier.playground; sourceTree = "<group>"; };
+		01C235FD24482561004852B1 /* CatClassifierFixed.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CatClassifierFixed.mlmodel; path = Resources/CatClassifierFixed.mlmodel; sourceTree = "<group>"; };
+		01C235FE24482561004852B1 /* 180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 180.png; path = Resources/180.png; sourceTree = "<group>"; };
+		01C235FF24482561004852B1 /* CatClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CatClassifier.mlmodel; path = Resources/CatClassifier.mlmodel; sourceTree = "<group>"; };
+		01C2360024482561004852B1 /* 87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 87.png; path = Resources/87.png; sourceTree = "<group>"; };
+		01C2360124482561004852B1 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 58.png; path = Resources/58.png; sourceTree = "<group>"; };
+		01C2360224482561004852B1 /* 60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 60.png; path = Resources/60.png; sourceTree = "<group>"; };
+		01C2360324482561004852B1 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1024.png; path = Resources/1024.png; sourceTree = "<group>"; };
+		01C2360424482561004852B1 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif"; path = "Resources/dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif"; sourceTree = "<group>"; };
+		01C2360524482561004852B1 /* IdentiBreedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IdentiBreedLogo.png; path = Resources/IdentiBreedLogo.png; sourceTree = "<group>"; };
+		01C2360624482562004852B1 /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 80.png; path = Resources/80.png; sourceTree = "<group>"; };
+		01C2360724482562004852B1 /* DogsVsCats.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DogsVsCats.mlmodel; path = Resources/DogsVsCats.mlmodel; sourceTree = "<group>"; };
+		01C2360824482562004852B1 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 120.png; path = Resources/120.png; sourceTree = "<group>"; };
+		01C2360924482562004852B1 /* 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 29.png; path = Resources/29.png; sourceTree = "<group>"; };
+		01C2360A24482562004852B1 /* DogClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DogClassifier.mlmodel; path = Resources/DogClassifier.mlmodel; sourceTree = "<group>"; };
+		01C2360B24482562004852B1 /* 20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 20.png; path = Resources/20.png; sourceTree = "<group>"; };
+		01C2360C24482562004852B1 /* 167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 167.png; path = Resources/167.png; sourceTree = "<group>"; };
+		2F534A8357065C1E408016A1 /* Pods-IdentiBreedPerfected.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdentiBreedPerfected.release.xcconfig"; path = "Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected.release.xcconfig"; sourceTree = "<group>"; };
+		83E81AA8932C53B21F9074A9 /* libPods-IdentiBreedPerfected.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IdentiBreedPerfected.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA69EB04A9A3BF05B609841E /* Pods-IdentiBreedPerfected.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdentiBreedPerfected.debug.xcconfig"; path = "Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B2508BE5AC6DA6FDA9AD875 /* libPods-IdentiBreedPerfected.a in Frameworks */,
+				B9D805A4F79862002DE7CAD4 /* libPods-IdentiBreedPerfected.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +142,7 @@
 				01925B362445037700124B06 /* IdentiBreedPerfectedUITests */,
 				01925B132445037600124B06 /* Products */,
 				4DD039B6225EA6FBC84B0D88 /* Pods */,
-				BDD940069D080B0E7995BED1 /* Frameworks */,
+				C40CB0E2573BE3E6DE3594B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,29 +168,31 @@
 				01925B1E2445037700124B06 /* Assets.xcassets */,
 				01925B202445037700124B06 /* LaunchScreen.storyboard */,
 				01925B232445037700124B06 /* Info.plist */,
-				01925B452445039D00124B06 /* 20.png */,
-				01925B4C2445039E00124B06 /* 29.png */,
-				01925B4A2445039E00124B06 /* 58.png */,
-				01925B4B2445039E00124B06 /* 60.png */,
-				01925B482445039D00124B06 /* 80.png */,
-				01925B462445039D00124B06 /* 87.png */,
-				01925B4F2445039E00124B06 /* 120.png */,
-				01925B4D2445039E00124B06 /* 152.png */,
-				01925B472445039D00124B06 /* 167.png */,
-				01925B4E2445039E00124B06 /* 180.png */,
-				01925B502445039E00124B06 /* 1024.png */,
-				01925B492445039D00124B06 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */,
-				01925B5E244503B500124B06 /* 76.png */,
-				01925B5D244503B500124B06 /* CameraIconFixed.png */,
-				01925B61244503C300124B06 /* IdentiBreedLogo.png */,
-				01925B63244503CB00124B06 /* 40.png */,
-				01925B682445040800124B06 /* CatClassifier.mlmodel */,
-				01925B652445040800124B06 /* CatClassifierFixed.mlmodel */,
-				01925B672445040800124B06 /* DogClassifier.mlmodel */,
-				01925B662445040800124B06 /* DogsVsCats.mlmodel */,
 				01796BBF24451A5000950425 /* PhotoCell.swift */,
 				0115561F24466D3C009F7F9E /* GoogleService-Info.plist */,
 				01502AED2446B63A0063F6A3 /* BreedCell.swift */,
+				01C2360B24482562004852B1 /* 20.png */,
+				01C2360924482562004852B1 /* 29.png */,
+				01C235FA24482561004852B1 /* 40.png */,
+				01C2360124482561004852B1 /* 58.png */,
+				01C2360224482561004852B1 /* 60.png */,
+				01C235F924482561004852B1 /* 76.png */,
+				01C2360624482562004852B1 /* 80.png */,
+				01C2360024482561004852B1 /* 87.png */,
+				01C2360824482562004852B1 /* 120.png */,
+				01C235F824482561004852B1 /* 152.png */,
+				01C2360C24482562004852B1 /* 167.png */,
+				01C235FE24482561004852B1 /* 180.png */,
+				01C2360324482561004852B1 /* 1024.png */,
+				01C235F724482561004852B1 /* breeds_info.json */,
+				01C235FB24482561004852B1 /* CameraIconFixed.png */,
+				01C235FF24482561004852B1 /* CatClassifier.mlmodel */,
+				01C235FC24482561004852B1 /* CatClassifier.playground */,
+				01C235FD24482561004852B1 /* CatClassifierFixed.mlmodel */,
+				01C2360424482561004852B1 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */,
+				01C2360A24482562004852B1 /* DogClassifier.mlmodel */,
+				01C2360724482562004852B1 /* DogsVsCats.mlmodel */,
+				01C2360524482561004852B1 /* IdentiBreedLogo.png */,
 			);
 			path = IdentiBreedPerfected;
 			sourceTree = "<group>";
@@ -213,16 +218,16 @@
 		4DD039B6225EA6FBC84B0D88 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C6AC2564A47E1C6A0B2A6C62 /* Pods-IdentiBreedPerfected.debug.xcconfig */,
-				14B182506725382CDCF03236 /* Pods-IdentiBreedPerfected.release.xcconfig */,
+				AA69EB04A9A3BF05B609841E /* Pods-IdentiBreedPerfected.debug.xcconfig */,
+				2F534A8357065C1E408016A1 /* Pods-IdentiBreedPerfected.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		BDD940069D080B0E7995BED1 /* Frameworks */ = {
+		C40CB0E2573BE3E6DE3594B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				656792315D5B6B7C4818F593 /* libPods-IdentiBreedPerfected.a */,
+				83E81AA8932C53B21F9074A9 /* libPods-IdentiBreedPerfected.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -234,11 +239,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01925B3C2445037700124B06 /* Build configuration list for PBXNativeTarget "IdentiBreedPerfected" */;
 			buildPhases = (
-				E5C467340BC555BB3D6633DF /* [CP] Check Pods Manifest.lock */,
+				D69D371BCC6676E727A609F7 /* [CP] Check Pods Manifest.lock */,
 				01925B0E2445037600124B06 /* Sources */,
 				01925B0F2445037600124B06 /* Frameworks */,
 				01925B102445037600124B06 /* Resources */,
-				A82F3F71924A4307328E932D /* [CP] Copy Pods Resources */,
+				E138678D19FB123E0DD893AB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -333,27 +338,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01925B62244503C300124B06 /* IdentiBreedLogo.png in Resources */,
-				01925B532445039E00124B06 /* 167.png in Resources */,
-				01925B552445039E00124B06 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif in Resources */,
-				01925B5A2445039E00124B06 /* 180.png in Resources */,
-				01925B542445039E00124B06 /* 80.png in Resources */,
-				01925B522445039E00124B06 /* 87.png in Resources */,
+				01C2362024482562004852B1 /* 20.png in Resources */,
+				01C2361E24482562004852B1 /* 29.png in Resources */,
+				01C2361A24482562004852B1 /* IdentiBreedLogo.png in Resources */,
+				01C2361624482562004852B1 /* 58.png in Resources */,
+				01C2361124482562004852B1 /* CameraIconFixed.png in Resources */,
 				01502AEC2446B1940063F6A3 /* Second.storyboard in Resources */,
-				01925B562445039E00124B06 /* 58.png in Resources */,
-				01925B572445039E00124B06 /* 60.png in Resources */,
-				01925B60244503B500124B06 /* 76.png in Resources */,
-				01925B592445039E00124B06 /* 152.png in Resources */,
-				01925B5F244503B500124B06 /* CameraIconFixed.png in Resources */,
+				01C2361724482562004852B1 /* 60.png in Resources */,
+				01C2360E24482562004852B1 /* 152.png in Resources */,
 				01925B222445037700124B06 /* LaunchScreen.storyboard in Resources */,
 				01925B1F2445037700124B06 /* Assets.xcassets in Resources */,
-				01925B64244503CB00124B06 /* 40.png in Resources */,
-				01925B582445039E00124B06 /* 29.png in Resources */,
-				01925B5B2445039E00124B06 /* 120.png in Resources */,
-				01925B5C2445039E00124B06 /* 1024.png in Resources */,
+				01C2361324482562004852B1 /* 180.png in Resources */,
 				0115562024466D3C009F7F9E /* GoogleService-Info.plist in Resources */,
+				01C2361924482562004852B1 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif in Resources */,
+				01C2360D24482562004852B1 /* breeds_info.json in Resources */,
+				01C2362124482562004852B1 /* 167.png in Resources */,
+				01C2361524482562004852B1 /* 87.png in Resources */,
+				01C2360F24482562004852B1 /* 76.png in Resources */,
+				01C2361824482562004852B1 /* 1024.png in Resources */,
+				01C2361B24482562004852B1 /* 80.png in Resources */,
 				01925B1D2445037600124B06 /* Main.storyboard in Resources */,
-				01925B512445039E00124B06 /* 20.png in Resources */,
+				01C2361024482562004852B1 /* 40.png in Resources */,
+				01C2361D24482562004852B1 /* 120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,24 +380,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A82F3F71924A4307328E932D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5C467340BC555BB3D6633DF /* [CP] Check Pods Manifest.lock */ = {
+		D69D371BCC6676E727A609F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -413,6 +402,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E138678D19FB123E0DD893AB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IdentiBreedPerfected/Pods-IdentiBreedPerfected-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -420,16 +426,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C2361F24482562004852B1 /* DogClassifier.mlmodel in Sources */,
 				01502AEE2446B63A0063F6A3 /* BreedCell.swift in Sources */,
 				01925B1A2445037600124B06 /* ViewController.swift in Sources */,
-				01925B6A2445040800124B06 /* DogsVsCats.mlmodel in Sources */,
-				01925B6B2445040800124B06 /* DogClassifier.mlmodel in Sources */,
-				01925B6C2445040800124B06 /* CatClassifier.mlmodel in Sources */,
+				01C2361424482562004852B1 /* CatClassifier.mlmodel in Sources */,
 				01796BC024451A5000950425 /* PhotoCell.swift in Sources */,
 				01925B162445037600124B06 /* AppDelegate.swift in Sources */,
 				01925B182445037600124B06 /* SceneDelegate.swift in Sources */,
+				01C2361C24482562004852B1 /* DogsVsCats.mlmodel in Sources */,
 				01502AF02446B6830063F6A3 /* SecondViewController.swift in Sources */,
-				01925B692445040800124B06 /* CatClassifierFixed.mlmodel in Sources */,
+				01C2361224482562004852B1 /* CatClassifierFixed.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,7 +606,7 @@
 		};
 		01925B3D2445037700124B06 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6AC2564A47E1C6A0B2A6C62 /* Pods-IdentiBreedPerfected.debug.xcconfig */;
+			baseConfigurationReference = AA69EB04A9A3BF05B609841E /* Pods-IdentiBreedPerfected.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -620,7 +626,7 @@
 		};
 		01925B3E2445037700124B06 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14B182506725382CDCF03236 /* Pods-IdentiBreedPerfected.release.xcconfig */;
+			baseConfigurationReference = 2F534A8357065C1E408016A1 /* Pods-IdentiBreedPerfected.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

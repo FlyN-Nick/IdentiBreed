@@ -8,5 +8,6 @@ target 'IdentiBreedPerfected' do
     pod 'Firebase/Storage'
     pod 'Firebase/Firestore'
     pod 'Firebase/Database'
+    pod 'Google-Mobile-Ads-SDK'
 
 end

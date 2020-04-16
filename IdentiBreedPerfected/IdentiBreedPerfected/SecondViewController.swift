@@ -35,6 +35,7 @@ class SecondViewController: UIViewController, ResultsHandlerDelegate
         similarPets.delegate = self
         similarPets.dataSource = self
         similarPets.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.25)
+        similarPets.allowsSelection = false
         resultsHandler.breedResults = breedResults
         resultsHandler.results = results
         resultsHandler.delegate = self
@@ -44,8 +45,9 @@ class SecondViewController: UIViewController, ResultsHandlerDelegate
         petImage.image = petImageData
         breedInfoTable.delegate = breedInfoHandler
         breedInfoTable.dataSource = breedInfoHandler
-        selectBreed(breedResults[0])
         breedInfoTable.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.25)
+        breedInfoTable.allowsSelection = false
+        selectBreed(breedResults[0])
         self.view.bringSubviewToFront(backButton)
     }
     @IBAction func backButton(_ sender: Any)
@@ -89,7 +91,7 @@ extension SecondViewController: UITableViewDataSource, UITableViewDelegate
             {
                 cell.imageView!.image = image
                 cell.imageView!.contentMode = .scaleAspectFit
-                var infoText = "Similarity: \(userSimilarPets[indexPath.row].1)\n"
+                var infoText = "Similarity: \(userSimilarPets[indexPath.row].1)%\n"
                 let probabilitiesInfo = userSimilarPets[indexPath.row].0.data()["Probabilities"] as! [Int]
                 let breedsInfo = userSimilarPets[indexPath.row].0.data()["Breeds"] as! [String]
                 var counter = 0
@@ -155,7 +157,7 @@ extension ResultsHandler: UITableViewDataSource, UITableViewDelegate
             selectedBreed = breedResults[0]
         }
         let cell = BreedCell()
-        cell.textLabel!.text = ("\(results[indexPath.row])%")
+        cell.textLabel!.text = results[indexPath.row]
         cell.textLabel!.numberOfLines = 1
         cell.textLabel!.textAlignment = .center
         cell.textLabel!.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
@@ -189,6 +191,7 @@ extension BreedInfoHandler: UITableViewDataSource, UITableViewDelegate
 }
 extension SecondViewController
 {
+    // MARK: - Yes, I copy and pasted a JSON into the code because I was lazy
     func getBreedInfo(breed: String) -> [String: Int]
     {
         let json = [
