@@ -7951,11 +7951,11 @@ extension SecondViewController
 
         if let info = json["cat_breeds"]![breed]
         {
-            return info
+            return info as? [String: Int] ?? [:]
         }
         else
         {
-            return json["dog_breeds"]![breed]!
+            return json["dog_breeds"]![breed] as? [String: Int] ?? [:]
         }
     }
 }
