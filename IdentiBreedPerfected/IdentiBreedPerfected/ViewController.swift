@@ -3,6 +3,8 @@ import Vision
 import UIKit
 import Firebase
 import AVKit
+import CoreTelephony
+import SystemConfiguration
 
 class ViewController: UIViewController
 {
@@ -12,32 +14,20 @@ class ViewController: UIViewController
   //@IBOutlet weak var resultsTable: UITableView!
   @IBOutlet weak var LoadingIndicator: UIActivityIndicatorView!
     
-  var badCount = 0
   var userSimilarPets = [(QueryDocumentSnapshot, Int)]()
   var userLink = String()
   var results = [String]()
   var breedResults = [String]()
+  private let reachability = SCNetworkReachabilityCreateWithName(nil, "google.com")
   
   // MARK: - View Did Load
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    let db = Firestore.firestore()
     petImage.startAnimating()
     LoadingIndicator.isOpaque = false
     LoadingIndicator.isHidden = true
     LoadingIndicator.stopAnimating()
-    db.collection("imageInfos")
-        .getDocuments() { (querySnapshot, err) in
-            if let err = err
-            {
-                print("Error getting documents: \(err)")
-            }
-            else
-            {
-                self.badCount = querySnapshot!.documents.count
-            }
-    }
   }
 }
 
@@ -95,20 +85,45 @@ extension ViewController
 
 extension ViewController
 {
+    // MARK: - Checks if user has an internet connection
+    private func checkReachable()
+    {
+        var flags = SCNetworkReachabilityFlags()
+        SCNetworkReachabilityGetFlags(self.reachability!, &flags)
+        
+        if (!isNetworkReachable(with: flags))
+        {
+            let alert = UIAlertController(title: "Internet Connection Required", message: "You can turn on mobile data for this app in Settings.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    private func isNetworkReachable (with flags: SCNetworkReachabilityFlags) -> Bool
+    {
+        let isReachable = flags.contains(.reachable)
+        let needsConnection = flags.contains(.connectionRequired)
+        let canConnectAutomatically = flags.contains(.connectionOnDemand) || flags.contains(.connectionOnTraffic)
+        let canConnectWithoutUserInteraction = canConnectAutomatically && !flags.contains(.interventionRequired)
+        return isReachable && (!needsConnection || canConnectWithoutUserInteraction)
+    }
     // MARK: - Compare Pet Button
     func comparePet(userBreeds: [String], userProbabilities: [Int])
     {
+        checkReachable()
         let db = Firestore.firestore()
         db.collection("imageInfos")
             .getDocuments() { (querySnapshot, err) in
                 if let err = err
                 {
                     print("Error getting documents: \(err)")
+                    let alert = UIAlertController(title: "Something Went Wrong", message: "An error occured while querying to the database.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
                 }
                 else
                 {
                     print("Successfull firebase query!")
                     var similarPets = [(QueryDocumentSnapshot, Int)]()
+                    var maxSimilarityScore: Int = 0
                     for document in querySnapshot!.documents
                     {
                         let breeds = document.data()["Breeds"] as! [String]
@@ -143,7 +158,7 @@ extension ViewController
                         }
                         if (document.data()["Link"] as! String == self.userLink)
                         {
-                            similarityScore = 0
+                            maxSimilarityScore = similarityScore
                         }
                         if similarityScore > 0
                         {
@@ -151,7 +166,16 @@ extension ViewController
                             similarPets.append(temp)
                         }
                     }
-                    let sortedSimilarPets = similarPets.sorted {
+                    var similarPetsProbabilities = [(QueryDocumentSnapshot, Int)]()
+                    for pet in similarPets
+                    {
+                        let document = pet.0
+                        if (document.data()["Link"] as! String != self.userLink)
+                        {
+                            similarPetsProbabilities.append((document, (pet.1/maxSimilarityScore)))
+                        }
+                    }
+                    let sortedSimilarPets = similarPetsProbabilities.sorted {
                         $0.1 > $1.1
                     }
                     self.userSimilarPets = sortedSimilarPets
@@ -170,6 +194,7 @@ extension ViewController
   func uploadPetImage(_ image: UIImage, breeds: [String], probabilities: [Int])
   {
     print("Attempting to upload image")
+    checkReachable()
     let uid = UUID().uuidString
     let imageRef = Storage.storage().reference().child("images/\(uid)")
     guard let imageData = image.jpegData(compressionQuality: 1.0) else { return }
@@ -179,12 +204,16 @@ extension ViewController
           if error != nil
           {
               print("Error while uploading image: \(String(describing: error))")
+              let alert = UIAlertController(title: "Something Went Wrong", message: "An error occured while uploading to the database.", preferredStyle: .alert)
+              alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
               return
           }
           imageRef.downloadURL { (url, error) in
             if error != nil
             {
                 print("Error while downloading image url: \(String(describing: error))")
+                let alert = UIAlertController(title: "Something Went Wrong", message: "An error occured while querying to the database.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
                 return
             }
             guard let url = url else {
@@ -202,6 +231,8 @@ extension ViewController
               if err != nil
               {
                 print("Error while uploading image data: \(String(describing: error))")
+                let alert = UIAlertController(title: "Something Went Wrong", message: "An error occured while uploading to the database.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
                 return
               }
               else
@@ -221,6 +252,8 @@ extension ViewController
     LoadingIndicator.isOpaque = true
     LoadingIndicator.startAnimating()
     guard let model = try? VNCoreMLModel(for: DogsVsCats().model) else {
+      let alert = UIAlertController(title: "Something Went Wrong", message: "An error while loading machine learning model.", preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
       fatalError("Could not load Animal Classifier model...")
     }
     
@@ -254,6 +287,8 @@ extension ViewController
   func classifyDogBreed(image: CIImage, uiimage: UIImage)
   {
     guard let model = try? VNCoreMLModel(for: DogClassifier().model) else {
+      let alert = UIAlertController(title: "Something Went Wrong", message: "An error while loading machine learning model.", preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
       fatalError("Could not load Dog Classifier model...")
     }
       let request = VNCoreMLRequest(model: model) { [weak self] request, error in
@@ -299,6 +334,8 @@ extension ViewController
   func classifyCatType(image: CIImage, uiimage: UIImage)
   {
     guard let model = try? VNCoreMLModel(for: CatClassifierFixed().model) else {
+      let alert = UIAlertController(title: "Something Went Wrong", message: "An error while loading machine learning model.", preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
       fatalError("Could not load Cat Classifier model...")
     }
       let request = VNCoreMLRequest(model: model) { [weak self] request, error in

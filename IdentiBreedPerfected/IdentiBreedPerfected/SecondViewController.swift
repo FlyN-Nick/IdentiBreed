@@ -155,7 +155,7 @@ extension ResultsHandler: UITableViewDataSource, UITableViewDelegate
             selectedBreed = breedResults[0]
         }
         let cell = BreedCell()
-        cell.textLabel!.text = results[indexPath.row]
+        cell.textLabel!.text = ("\(results[indexPath.row])%")
         cell.textLabel!.numberOfLines = 1
         cell.textLabel!.textAlignment = .center
         cell.textLabel!.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
@@ -335,7 +335,19 @@ extension SecondViewController
                     "Potential for Playfulness": 3,
                     "Tendency to Vocalize": 5
                 ],
-                "Chinese Li Hua": [],
+                "Chinese Li Hua": [
+                    "Adaptability": 3,
+                    "Affection Level": 3,
+                    "Child Friendly": 3,
+                    "Dog Friendly": 3,
+                    "Energy Level": 3,
+                    "Grooming": 1,
+                    "Health Issues": 1,
+                    "Intelligence": 3,
+                    "Shedding Level": 3,
+                    "Social Needs": 4,
+                    "Stranger Friendly": 3
+                ],
                 "Colorpoint Shorthair": [
                     "Affectionate with Family": 5,
                     "Amount of Shedding": 2,
@@ -503,7 +515,19 @@ extension SecondViewController
                     "Potential for Playfulness": 3,
                     "Tendency to Vocalize": 2
                 ],
-                "Munchkin": [],
+                "Munchkin": [
+                    "Adaptability": 5,
+                    "Affection Level": 5,
+                    "Child Friendly": 4,
+                    "Dog Friendly": 5,
+                    "Energy Level": 4,
+                    "Grooming": 2,
+                    "Health Issues": 1,
+                    "Intelligence": 5,
+                    "Shedding Level": 3,
+                    "Social Needs": 5,
+                    "Stranger Friendly": 5
+                ],
                 "Nebelung": [
                     "Affectionate with Family": 4,
                     "Amount of Shedding": 4,
@@ -536,8 +560,32 @@ extension SecondViewController
                     "Pet Friendly": 3,
                     "Tendency to Vocalize": 2
                 ],
-                "Oriental Short Hair": [],
-                "Oriental Tabby": [],
+                "Oriental Short Hair": [
+                    "Adaptability": 5,
+                    "Affection Level": 5,
+                    "Child Friendly": 4,
+                    "Dog Friendly": 5,
+                    "Energy Level": 5,
+                    "Grooming": 1,
+                    "Health Issues": 3,
+                    "Intelligence": 5,
+                    "Shedding Level": 3,
+                    "Social Needs": 5,
+                    "Stranger Friendly": 3
+                ],
+                "Oriental Tabby": [
+                    "Adaptability": 5,
+                    "Affection Level": 5,
+                    "Child Friendly": 4,
+                    "Dog Friendly": 5,
+                    "Energy Level": 5,
+                    "Grooming": 1,
+                    "Health Issues": 3,
+                    "Intelligence": 5,
+                    "Shedding Level": 3,
+                    "Social Needs": 5,
+                    "Stranger Friendly": 3
+                ],
                 "Persian": [
                     "Affectionate with Family": 3,
                     "Amount of Shedding": 5,
@@ -625,7 +673,19 @@ extension SecondViewController
                     "Potential for Playfulness": 4,
                     "Tendency to Vocalize": 2
                 ],
-                "Siamese": [],
+                "Siamese": [
+                    "Adaptability": 5,
+                    "Affection Level": 5,
+                    "Child Friendly": 4,
+                    "Dog Friendly": 5,
+                    "Energy Level": 5,
+                    "Grooming": 1,
+                    "Health Issues": 1,
+                    "Intelligence": 5,
+                    "Shedding Level": 2,
+                    "Social Needs": 5,
+                    "Stranger Friendly": 5
+                ],
                 "Siberian": [
                     "Affectionate with Family": 5,
                     "Amount of Shedding": 4,
@@ -638,7 +698,9 @@ extension SecondViewController
                     "Potential for Playfulness": 5,
                     "Tendency to Vocalize": 2
                 ],
-                "Silver": [],
+                "Silver": [
+                    "Cuteness": 5
+                ],
                 "Singapura": [
                     "Affectionate with Family": 5,
                     "Amount of Shedding": 2,
@@ -685,10 +747,18 @@ extension SecondViewController
                     "Pet Friendly": 5,
                     "Potential for Playfulness": 4
                 ],
-                "Tabby": [],
-                "Tiger": [],
-                "Tortoiseshell": [],
-                "Tuxedo": [],
+                "Tabby": [
+                    "Cuteness": 5
+                ],
+                "Tiger": [
+                    "Cuteness": 5
+                ],
+                "Tortoiseshell": [
+                    "Cuteness": 5
+                ],
+                "Tuxedo": [
+                    "Cuteness": 5
+                ],
                 "Tonkinese": [
                     "Affectionate with Family": 5,
                     "Amount of Shedding": 2,
@@ -4883,10 +4953,20 @@ extension SecondViewController
                     "Tolerates Hot Weather": 3,
                     "Wanderlust Potential": 3
                 ],
-                "Korean Jindo Dog": [],
-                "Dingo": [],
-                "Dhole": [],
-                "African Hunting Dog": [],
+                "Korean Jindo Dog": [
+                    "Grooming": 3,
+                    "Shedding": 3,
+                    "Exercise Needs": 5
+                ],
+                "Dingo": [
+                    "Wildness": 5
+                ],
+                "Dhole": [
+                    "Wildness": 5
+                ],
+                "African Hunting Dog": [
+                    "Wildness": 4
+                ],
                 "Kuvasz": [
                     " Adaptability": 3,
                     " All Around Friendliness": 2,
@@ -7791,7 +7871,12 @@ extension SecondViewController
                     "Tolerates Hot Weather": 3,
                     "Wanderlust Potential": 4
                 ],
-                "Mexican Hairless": [],
+                "Mexican Hairless": [
+                    "Grooming": 1,
+                    "Shedding": 1,
+                    "Energy Level": 4,
+                    "Trainability": 3
+                ],
                 "Yorkipoo": [
                     " Adaptability": 4,
                     " All Around Friendliness": 4,
@@ -7863,11 +7948,11 @@ extension SecondViewController
 
         if let info = json["cat_breeds"]![breed]
         {
-            return info as? [String: Int] ?? [:]
+            return info
         }
         else
         {
-            return json["dog_breeds"]![breed] as? [String : Int] ?? [:]
+            return json["dog_breeds"]![breed]!
         }
     }
 }

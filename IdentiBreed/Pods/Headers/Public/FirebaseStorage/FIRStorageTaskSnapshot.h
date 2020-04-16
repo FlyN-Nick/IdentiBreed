@@ -1,1 +1,0 @@
-../../../FirebaseStorage/FirebaseStorage/Sources/Public/FIRStorageTaskSnapshot.h
