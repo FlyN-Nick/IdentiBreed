@@ -86,7 +86,6 @@
 		01C235F924482561004852B1 /* 76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 76.png; path = Resources/76.png; sourceTree = "<group>"; };
 		01C235FA24482561004852B1 /* 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 40.png; path = Resources/40.png; sourceTree = "<group>"; };
 		01C235FB24482561004852B1 /* CameraIconFixed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CameraIconFixed.png; path = Resources/CameraIconFixed.png; sourceTree = "<group>"; };
-		01C235FC24482561004852B1 /* CatClassifier.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = CatClassifier.playground; path = Resources/CatClassifier.playground; sourceTree = "<group>"; };
 		01C235FD24482561004852B1 /* CatClassifierFixed.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CatClassifierFixed.mlmodel; path = Resources/CatClassifierFixed.mlmodel; sourceTree = "<group>"; };
 		01C235FE24482561004852B1 /* 180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 180.png; path = Resources/180.png; sourceTree = "<group>"; };
 		01C235FF24482561004852B1 /* CatClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CatClassifier.mlmodel; path = Resources/CatClassifier.mlmodel; sourceTree = "<group>"; };
@@ -187,7 +186,6 @@
 				01C235F724482561004852B1 /* breeds_info.json */,
 				01C235FB24482561004852B1 /* CameraIconFixed.png */,
 				01C235FF24482561004852B1 /* CatClassifier.mlmodel */,
-				01C235FC24482561004852B1 /* CatClassifier.playground */,
 				01C235FD24482561004852B1 /* CatClassifierFixed.mlmodel */,
 				01C2360424482561004852B1 /* dna-rna-chromosomes-double-helix-rotating-animated-gif-16.gif */,
 				01C2360A24482562004852B1 /* DogClassifier.mlmodel */,
